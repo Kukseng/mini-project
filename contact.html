@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact | Tourism Siem Reap</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+  <link rel="stylesheet" href="./src/output.css" />
+</head>
+<body>
+  <main>
+    <section id="contact" class="py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <p class="text-base font-semibold uppercase tracking-wide text-blue-600 dark:text-blue-200">Contact</p>
+          <h2 class="text-3xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-4">Get in Touch</h2>
+          <p class="text-lg text-gray-600 dark:text-slate-400">
+            We're here to help you plan your perfect trip to Siem Reap.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-10">
+          <!-- Contact Info -->
+          <div>
+            <p class="text-lg text-gray-600 dark:text-slate-400 mb-12">
+              Have questions or need help planning your trip to Siem Reap?
+              We're here to assist you! Whether you're looking for travel tips, cultural insights, or help with bookings, feel free to reach out.
+              Let us make your journey to Siem Reap smooth, memorable, and inspiring.
+            </p>
+
+            <ul>
+              <li class="flex mb-6">
+                <div class="flex h-10 w-10 items-center justify-center rounded bg-blue-900 text-white">
+                  <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <div class="ml-4">
+                  <h3 class="text-lg font-medium text-gray-900 dark:text-white mb-1">Our Address</h3>
+                  <p class="text-gray-600 dark:text-slate-400">Siem Reap City, Cambodia</p>
+                </div>
+              </li>
+
+              <li class="flex mb-6">
+                <div class="flex h-10 w-10 items-center justify-center rounded bg-blue-900 text-white">
+                  <i class="fa-solid fa-phone-volume"></i>
+                </div>
+                <div class="ml-4">
+                  <h3 class="text-lg font-medium text-gray-900 dark:text-white mb-1">Contact</h3>
+                  <p class="text-gray-600 dark:text-slate-400">Mobile: +855 (0)12 345 678</p>
+                  <p class="text-gray-600 dark:text-slate-400">Email: info@tourismsiemreap.com</p>
+                </div>
+              </li>
+
+              <li class="flex">
+                <div class="flex h-10 w-10 items-center justify-center rounded bg-blue-900 text-white">
+                  <i class="fa-solid fa-clock"></i>
+                </div>
+                <div class="ml-4">
+                  <h3 class="text-lg font-medium text-gray-900 dark:text-white mb-1">Working Hours</h3>
+                  <p class="text-gray-600 dark:text-slate-400">Mon – Fri: 08:00 – 20:00</p>
+                  <p class="text-gray-600 dark:text-slate-400">Sat & Sun: 08:00 – 17:00</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+
+          <!-- Contact Form -->
+          <div class="card p-5 md:p-12 bg-white dark:bg-gray-800 rounded-lg shadow-md">
+            <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Ready to Get Started?</h2>
+            <form id="contactForm">
+              <div class="space-y-4 mb-6">
+                <input type="text" name="name" id="name" placeholder="Your name" autocomplete="given-name" class="w-full rounded-md border border-gray-400 py-2 px-4 shadow-md " required/>
+                
+                <input type="email" name="email" id="email" placeholder="Your email address" autocomplete="email" class="w-full rounded-md border border-gray-400 py-2 px-4 shadow-md " required/>
+        
+                <textarea name="textarea" id="textarea" rows="5" placeholder="Write your message... " class="w-full rounded-md border border-gray-300 py-2 px-4 shadow-md" required></textarea>
+              </div>
+              <button type="submit" class="w-full bg-blue-800 text-white py-3 rounded-md font-semibold">
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
+
