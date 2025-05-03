@@ -1,14 +1,2 @@
+@import url('https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&display=swap');
 @import "tailwindcss";
-*{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-.sandstone-bg { background-color: #D6C1A4; }
-.sandstone-text { color: #D6C1A4; }
-.gold-bg { background-color: #C9A14A; }
-.gold-text { color: #C9A14A; }
-.brick-bg { background-color: #8B5E3C; }
-.brick-text { color: #8B5E3C; }
-.ivory-bg { background-color: #FAF8F2; }
-.surface-bg { background-color: #EEEAE2; }
-.dark-text { color: #333333; }
-.heading-text { color: #1A1A1A; }
