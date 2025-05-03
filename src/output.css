@@ -1,4 +1,5 @@
 /*! tailwindcss v4.1.5 | MIT License | https://tailwindcss.com */
+@import url('https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&display=swap');
 @layer properties;
 @layer theme, base, components, utilities;
 @layer theme {
@@ -7,11 +8,27 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-slate-700: oklch(37.2% 0.044 257.287);
+    --color-gray-200: oklch(92.8% 0.006 264.531);
+    --color-gray-300: oklch(87.2% 0.01 258.338);
+    --color-gray-600: oklch(44.6% 0.03 256.802);
+    --color-gray-700: oklch(37.3% 0.034 259.733);
+    --color-gray-800: oklch(27.8% 0.033 256.848);
+    --color-gray-950: oklch(13% 0.028 261.692);
+    --color-white: #fff;
+    --spacing: 0.25rem;
     --text-3xl: 1.875rem;
     --text-3xl--line-height: calc(2.25 / 1.875);
+    --text-5xl: 3rem;
+    --text-5xl--line-height: 1;
     --font-weight-bold: 700;
+    --default-transition-duration: 150ms;
+    --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
+    --font-Kantomruy: 'Kantumruy Pro', sans-serif;
+    --font-weight-b: 700;
+    --font-weight-n: 200;
   }
 }
 @layer base {
@@ -160,55 +177,122 @@
   }
 }
 @layer utilities {
-  .table {
-    display: table;
+  .flex {
+    display: flex;
   }
-  .border-collapse {
-    border-collapse: collapse;
+  .h-5 {
+    height: calc(var(--spacing) * 5);
   }
-  .resize {
-    resize: both;
+  .min-h-screen {
+    min-height: 100vh;
   }
-  .border {
-    border-style: var(--tw-border-style);
-    border-width: 1px;
+  .w-5 {
+    width: calc(var(--spacing) * 5);
+  }
+  .flex-col {
+    flex-direction: column;
+  }
+  .items-center {
+    align-items: center;
+  }
+  .justify-center {
+    justify-content: center;
+  }
+  .gap-2 {
+    gap: calc(var(--spacing) * 2);
+  }
+  .rounded-full {
+    border-radius: calc(infinity * 1px);
+  }
+  .bg-gray-200 {
+    background-color: var(--color-gray-200);
+  }
+  .px-4 {
+    padding-inline: calc(var(--spacing) * 4);
+  }
+  .py-2 {
+    padding-block: calc(var(--spacing) * 2);
+  }
+  .font-Kantomruy {
+    font-family: var(--font-Kantomruy);
   }
   .text-3xl {
     font-size: var(--text-3xl);
     line-height: var(--tw-leading, var(--text-3xl--line-height));
   }
+  .font-b {
+    --tw-font-weight: var(--font-weight-b);
+    font-weight: var(--font-weight-b);
+  }
   .font-bold {
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
   }
+  .text-gray-800 {
+    color: var(--color-gray-800);
+  }
   .underline {
     text-decoration-line: underline;
   }
-  .outline {
-    outline-style: var(--tw-outline-style);
-    outline-width: 1px;
+  .transition-colors {
+    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
+  .hover\:bg-gray-300 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-gray-300);
+      }
+    }
+  }
+  .dark\:bg-gray-600 {
+    &:where(.dark, .dark *) {
+      background-color: var(--color-gray-600);
+    }
+  }
+  .dark\:text-5xl {
+    &:where(.dark, .dark *) {
+      font-size: var(--text-5xl);
+      line-height: var(--tw-leading, var(--text-5xl--line-height));
+    }
+  }
+  .dark\:text-white {
+    &:where(.dark, .dark *) {
+      color: var(--color-white);
+    }
+  }
+  .dark\:hover\:bg-gray-700 {
+    &:where(.dark, .dark *) {
+      &:hover {
+        @media (hover: hover) {
+          background-color: var(--color-gray-700);
+        }
+      }
+    }
   }
 }
-@property --tw-border-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
+:root {
+  --bg-color: #ffffff;
+  --text-color: #1f2937;
+}
+.dark {
+  --bg-color: #020508;
+  --text-color: #ffffff;
+}
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: all 0.3s ease;
 }
 @property --tw-font-weight {
   syntax: "*";
   inherits: false;
 }
-@property --tw-outline-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
-}
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
-      --tw-border-style: solid;
       --tw-font-weight: initial;
-      --tw-outline-style: solid;
     }
   }
 }
