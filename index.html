@@ -1,13 +1,271 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="./src/output.css" rel="stylesheet">
-</head>
-<body>
-  <h1 class="text-3xl font-bold underline">
-    Hello world!
-  </h1>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tourism</title>
+
+    <meta name="description" content="Explore Siem Reap, the gateway to Angkor Wat. Discover ancient temples, rich culture, local cuisine, and top travel tips for your unforgettable journey to Cambodia." />
+    <meta name="keywords" content="Siem Reap tourism, Angkor Wat, Cambodia travel, Siem Reap temples, Khmer culture, Cambodia holidays, things to do in Siem Reap" />
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Discover Siem Reap, Cambodia – Temples, Culture & Travel Guide" />
+    <meta property="og:description" content="Plan your trip to Siem Reap – from the ancient ruins of Angkor Wat to bustling night markets, cultural shows, and serene countryside escapes." />
+    <meta property="og:image" content="https://cms.siemreaper.click/uploads/angkor_wat_sunrise_discovery2712_997b977984.jpg" />
+    <meta property="og:url" content="https://kukseng.github.io/mini-project/" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Explore Siem Reap – Cambodia's Cultural Heart" />
+    <meta name="twitter:description" content="Discover the magic of Siem Reap, from Angkor Wat to floating villages. Your ultimate travel guide to Cambodia starts here." />
+    <meta name="twitter:image" content="https://yourwebsite.com/images/siem-reap-sunset.jpg" />
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./Asset/logoHaveBg.PNG" type="image/x-icon" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="src/output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+
+  <body class="bg-white transition-colors duration-500" id="body">
+
+    <header class="w-full h-[96px] 2xl:h-[115px]  xl:h-[107px] bg-[#D6C1A4] flex justify-between items-center px-6 md:px-9  lg:px-16 xl:px-28 2xl:px-32  relative z-50 mb-98">
+      <div>
+        <img src="./Asset/logoNoBg.png" class="w-28 2xl:w-36 xl:w-32 object-contain" alt="logo" />
+
+      </div>
+      <nav>
+        <ul class="hidden md:flex space-x-8 text-black font-semibold">
+          <li class="group relative">
+            <a href="#home" class="underline hover:no-underline">Home</a>
+            <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-gray-600 transition-all duration-300 group-hover:w-full"></span>
+          </li>
+          <li class="group relative">
+            <a href="#destination">Destination</a>
+            <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-gray-600 transition-all duration-300 group-hover:w-full"></span>
+          </li>
+          <li class="group relative">
+            <a href="#about">About Us</a>
+            <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-gray-600 transition-all duration-300 group-hover:w-full"></span>
+          </li>
+          <li class="group relative">
+            <a href="#contact">Contact Us</a>
+            <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-gray-600 transition-all duration-300 group-hover:w-full"></span>
+          </li>
+        </ul>
+
+
+      </nav>
+
+      <!-- Dark Mode Toggle -->
+      <div id="toggle" class="w-15 h-8 bg-gray-300 rounded-full p-1 flex items-center cursor-pointer transition-colors duration-500">
+        <div id="circle" class="bg-white w-6 h-6 rounded-full shadow-md flex items-center justify-center transform transition-transform duration-300">
+          <span id="icon" class="text-black text-[14px]"><i class="fa-solid fa-sun"></i></span>
+        </div>
+      </div>
+
+      <!-- Mobile Menu Toggle Button -->
+      <button id="menu-toggle" class="md:hidden text-white text-2xl">
+        <i class="fas fa-bars"></i>
+      </button>
+    </header>
+
+    <!-- Mobile Menu Dropdown -->
+    <div id="mobile-menu" class="hidden absolute top-[100px] left-0 w-full bg-[#C9A14A] text-white flex flex-col px-6 py-4 space-y-4 text-base z-40 md:hidden">
+      <!-- Close Button -->
+      <div class="w-full flex justify-end">
+        <button id="menu-close" class="text-white text-2xl">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Links -->
+      <ul class=" space-x-8 text-white font-semibold px-4">
+        <li class="group relative my-2">
+          <a href="#home">Home</a>
+          <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-12"></span>
+        </li>
+        <li class="group relative my-2">
+          <a href="#destination">Destination</a>
+          <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-24"></span>
+        </li>
+        <li class="group relative my-2">
+          <a href="#about">About Us</a>
+          <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-20"></span>
+        </li>
+        <li class="group relative my-2">
+          <a href="#contact">Contact Us</a>
+          <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-20"></span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+      const toggle = document.getElementById('toggle');
+      const circle = document.getElementById('circle');
+      const icon = document.getElementById('icon');
+      const body = document.getElementById('body');
+      let isDark = false;
+
+      toggle.addEventListener('click', () => {
+        isDark = !isDark;
+        circle.classList.toggle('translate-x-8');
+        icon.innerHTML = isDark ? '<i class="fa-solid fa-moon"></i>' : '<i class="fa-solid fa-sun"></i>';
+        icon.className = isDark ? 'text-white bg-black  w-6 h-6 rounded-full shadow-md flex items-center justify-center text-[14px]' : 'text-black text-[14px]';
+        body.className = isDark ? 'bg-gray-900 transition-colors duration-500' : 'bg-white transition-colors duration-500';
+      });
+
+      const menuToggle = document.getElementById('menu-toggle');
+      const menuClose = document.getElementById('menu-close');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      menuToggle.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+
+      menuClose.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    </script>
+
+
+      <!-- Footer -->
+  <footer class="bg-[#D6C1A4] text-[#333333] pt-12  px-6 md:px-12  lg:px-16 xl:px-28 2xl:px-32 ">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 2xl:grid-cols-4 gap-10 lg:gap-4 pb-10">
+
+      <!-- Logo + Description -->
+      <div>
+        <div class="flex items-center space-x-3 mb-4">
+          <img src="./Asset/logoHaveBg.PNG" alt="logo" class="w-30 h-30 rounded-full" />
+          <div>
+            <h2 class="text-xl font-bold">Tourism</h2>
+            <p class="text-sm">Explore World</p>
+          </div>
+        </div>
+        <p class="text-sm text-gray-700 mb-4">
+          Explore unforgettable journeys through ancient wonders and stunning landscapes with our expertly crafted tours.
+        </p>
+        <div class="flex space-x-3">
+          <a href="#" class="bg-white p-2 px-3.5 rounded-full hover:bg-[#1877F2]"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="bg-white p-2 px-3.5 rounded-full hover:bg-[#000000]"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" class="bg-white p-2 px-3.5 rounded-full hover:bg-[#0077B5]"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="bg-white p-2 px-3.5 rounded-full hover:bg-[#25D366]"><i class="fab fa-whatsapp"></i></a>
+          <a href="#" class="bg-white p-2 px-3.5 rounded-full hover:bg-gradient-to-r from-[#833ab4] via-[#fd1d1d] to-[#fcb045]"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+        <ul class="space-y-2 text-sm">
+          <li><a href="#" class="hover:text-white hover:underline ">&rsaquo; Home</a></li>
+          <li><a href="#" class="hover:text-white hover:underline">&rsaquo; Destination</a></li>
+          <li><a href="#" class="hover:text-white hover:underline">&rsaquo; About Us</a></li>
+          <li><a href="#" class="hover:text-white hover:underline">&rsaquo; Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div>
+        <h3 class="text-lg font-semibold mb-4">Contact</h3>
+        <ul class="space-y-4 text-sm">
+          <li class="flex items-start gap-3">
+            <div class="bg-white p-2 px-3.5 rounded-full">
+              <i class="fas fa-phone-alt"></i>
+            </div>
+            <div>
+              <p>(+855) 96-990-489</p>
+              <p>(+855) 88-990-489</p>
+            </div>
+          </li>
+          <h3 class="text-lg font-semibold mb-4">Address</h3>
+          <li class="flex items-start gap-3">
+            <div class="bg-white p-2 px-3.5 rounded-full">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div>
+              <p>mailinfo00@tourism.com</p>
+              <p>support24@tourism.com</p>
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <div class="bg-white p-2 px-3.5 rounded-full">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div>
+              <p>No. 24, Street 562,<br> Phnom Penh,
+                Cambodia</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Instagram Post -->
+      <div>
+        <h3 class="text-lg font-semibold mb-4">Instagram Post</h3>
+        <div class="grid grid-cols-3 gap-2">
+          <!-- Instagram Image Item -->
+          <div class="relative group w-full h-20 rounded-md overflow-hidden">
+            <img src="https://www.cambotours.com/userfiles/thumbs/angkor-wat-angkor-thom-bayon-ta-prohm-temple-private-tour.jpg" class="w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-[#3336369b] bg-opacity-50 flex justify-center items-center text-white text-xl translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out">
+              <i class="fab fa-instagram"></i>
+            </div>
+          </div>
+
+          <!-- Repeat for other images -->
+          <div class="relative group w-full h-20 rounded-md overflow-hidden">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5tSh24KWzNID6qUJWYNg8xhTT_5thkB8Tj3nNgbVMD8mxXHMaAtL0bUyhxkQrr8qNLZk&usqp=CAU" class="w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-[#3336369b] bg-opacity-50 flex justify-center items-center text-white text-xl translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out">
+              <i class="fab fa-instagram"></i>
+            </div>
+          </div>
+
+          <div class="relative group w-full h-20 rounded-md overflow-hidden">
+            <img src="https://www.siemreap.net/wp-content/uploads/2019/02/Equinox-at-Angkor-Wat.jpg" class="w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-[#3336369b] bg-opacity-50 flex justify-center items-center text-white text-xl translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out">
+              <i class="fab fa-instagram"></i>
+            </div>
+          </div>
+
+          <div class="relative group w-full h-20 rounded-md overflow-hidden">
+            <img src="https://images.squarespace-cdn.com/content/v1/531fa7cde4b04709d61d34e5/1472994148467-5PYFT285KKVJVAJY0MYS/image-asset.jpeg" class="w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-[#3336369b] bg-opacity-50 flex justify-center items-center text-white text-xl translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out">
+              <i class="fab fa-instagram"></i>
+            </div>
+          </div>
+
+          <div class="relative group w-full h-20 rounded-md overflow-hidden">
+            <img src="https://product.hstatic.net/200000644819/product/1896736516741f6c85bb-2_41fe6973697846ef97e15059e413b9cd_master.jpg" class="w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-[#3336369b] bg-opacity-50 flex justify-center items-center text-white text-xl translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out">
+              <i class="fab fa-instagram"></i>
+            </div>
+          </div>
+
+          <div class="relative group w-full h-20 rounded-md overflow-hidden">
+            <img src="https://th-thumbnailer.cdn-si-edu.com/TMVzhHVP-GUTRXARVeIMLwVxIJ8=/fit-in/1200x0/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer/a1/88/a188a6f4-143d-4df2-b955-f60e7872b307/gg7p00.jpg" class="w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-[#3336369b] bg-opacity-50 flex justify-center items-center text-white text-xl translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out">
+              <i class="fab fa-instagram"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="border-t border-gray-700 mt-6 py-4 flex flex-col md:flex-row justify-center items-center text-sm px-4">
+      <p>Copyright 2025 Tourism. All Rights Reserved.</p>
+
+
+<!-- go to top -->
+<a href="#top" target="_top"
+  class="fixed bottom-6 right-6 bg-[#8B5E3C] text-white rounded-full p-2 px-3.5 shadow-lg hover:bg-[#C9A14A]">
+  <i class="fas fa-arrow-up"></i>
+</a>
+  </footer>
+  </body>
 </html>
