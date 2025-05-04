@@ -22,7 +22,7 @@
       <nav>
         <ul class="hidden md:flex space-x-8 text-white font-semibold">
           <li class="group relative">
-            <a href="#home" class=" underline">Home</a>
+            <a href="#home" class="underline hover:no-underline">Home</a>
             <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-full"></span>
           </li>
           <li class="group relative">
@@ -43,9 +43,9 @@
       </nav>
 
       <!-- Dark Mode Toggle -->
-      <div id="toggle" class="w-16 h-8 bg-gray-300 rounded-full p-1 flex items-center cursor-pointer transition-colors duration-500">
+      <div id="toggle" class="w-15 h-8 bg-gray-300 rounded-full p-1 flex items-center cursor-pointer transition-colors duration-500">
         <div id="circle" class="bg-white w-6 h-6 rounded-full shadow-md flex items-center justify-center transform transition-transform duration-300">
-          <span id="icon" class="text-yellow-400 text-lg"><i class="fa-solid fa-sun"></i></span>
+          <span id="icon" class="text-black text-[14px]"><i class="fa-solid fa-sun"></i></span>
         </div>
       </div>
 
@@ -97,7 +97,7 @@
         isDark = !isDark;
         circle.classList.toggle('translate-x-8');
         icon.innerHTML = isDark ? '<i class="fa-solid fa-moon"></i>' : '<i class="fa-solid fa-sun"></i>';
-        icon.className = isDark ? 'text-yellow-400 text-lg' : 'text-yellow-400 text-lg';
+        icon.className = isDark ? 'text-white bg-black  w-6 h-6 rounded-full shadow-md flex items-center justify-center text-[14px]' : 'text-black text-[14px]';
         body.className = isDark ? 'bg-gray-900 transition-colors duration-500' : 'bg-white transition-colors duration-500';
       });
 
@@ -113,6 +113,7 @@
         mobileMenu.classList.add('hidden');
       });
     </script>
+
 
       <!-- Footer -->
   <footer class="bg-[#161e3b] text-white pt-12  px-6 md:px-12  lg:px-16 xl:px-28 2xl:px-32 ">
@@ -131,11 +132,11 @@
           Explore unforgettable journeys through ancient wonders and stunning landscapes with our expertly crafted tours.
         </p>
         <div class="flex space-x-3">
-          <a href="#" class="bg-gray-600 p-2 px-3.5 rounded-full hover:bg-blue-500"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" class="bg-gray-600 p-2 px-3.5 rounded-full hover:bg-blue-400"><i class="fab fa-twitter"></i></a>
-          <a href="#" class="bg-gray-600 p-2 px-3.5 rounded-full hover:bg-blue-600"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#" class="bg-gray-600 p-2 px-3.5 rounded-full hover:bg-green-500"><i class="fab fa-whatsapp"></i></a>
-          <a href="#" class="bg-gray-600 p-2 px-3.5 rounded-full hover:bg-pink-500"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="bg-gray-600 p-2 px-3.5 rounded-full hover:bg-[#1877F2]"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="bg-gray-600 p-2 px-3.5 rounded-full hover:bg-[#000000]"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" class="bg-gray-600 p-2 px-3.5 rounded-full hover:bg-[#0077B5]"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="bg-gray-600 p-2 px-3.5 rounded-full hover:bg-[#25D366]"><i class="fab fa-whatsapp"></i></a>
+          <a href="#" class="bg-gray-600 p-2 px-3.5 rounded-full hover:bg-gradient-to-r from-[#833ab4] via-[#fd1d1d] to-[#fcb045]"><i class="fab fa-instagram"></i></a>
         </div>
       </div>
 
