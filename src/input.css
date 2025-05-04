@@ -1,2 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&display=swap');
 @import "tailwindcss";
+
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    /* font family */
+    --font-family: 'Kantumruy Pro', sans-serif;
+    --font-weight-: 400;
+
+    /* for light mode */
+    --color-lprimary: #D6C1A4; 
+    --color-lsecondary: #C9A14A; 
+    --color-laccent: #8B5E3C; 
+    --color-lbackground: #FAF8F2;
+    --color-lsurface: #EEEAE2;
+    --color-ltext-m: #333333;
+    --color-ltext-h: #1A1A1A;
+
+    /* for dark mode */
+    --color-dprimary: #2F2A25;
+    --color-dsecondary: #B78C32;
+    --color-daccent: #A46C45;
+    --color-dbackground: #121212;
+    --color-dsurface: #1E1E1E;
+    --color-dtext-m: #E5E1DC;
+    --color-dtext-h: #F5F5F5;
+
+
+}
