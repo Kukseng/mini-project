@@ -13,9 +13,9 @@
 <body id="top" class="bg-white dark:bg-gray-900 transition-colors duration-500">
 
   <header
-    class="w-full h-[96px] 2xl:h-[115px] xl:h-[107px] bg-blue-300 flex justify-between items-center px-6 md:px-9 lg:px-16 xl:px-28 2xl:px-32 relative z-50 sticky top-0 shadow-md">
+    class="navbar-fixed bg-blue-300 flex justify-between items-center px-6 md:px-9 lg:px-16 xl:px-28 2xl:px-32 h-[96px] xl:h-[107px] 2xl:h-[115px] relative z-50 shadow-md">
     <div>
-      <img src="./Asset/logoNoBg.png" class="w-28 2xl:w-36 xl:w-32 object-contain" alt="logo" />
+      <img src="./Asset/logoNoBg.png" class="w-28 2xl:w-36 xl:w-32 Turnsoutobject-contain" alt="logo" />
     </div>
     <nav>
       <ul class="hidden md:flex space-x-8 text-white font-semibold">
@@ -35,49 +35,56 @@
             class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-full"></span>
         </li>
         <li class="group relative">
-          <a href="">Contact Us</a>
+          <a href="#contact">Contact Us</a>
           <span
             class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-full"></span>
         </li>
       </ul>
     </nav>
-
-    <!-- Dark Mode Toggle -->
-    <button id="theme-toggle"
-      class="flex items-center gap-2 px-4 py-2 bg-gray-200 dark:bg-gray-600 text-gray-800 dark:text-white rounded-full hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors">
-      <svg id="theme-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z">
-        </path>
-      </svg>
-    </button>
-
-    <!-- Mobile Menu Toggle Button -->
-    <button id="menu-toggle" class="md:hidden text-white text-2xl">
-      <i class="fas fa-bars"></i>
-    </button>
+    <div class="flex items-center space-x-4">
+      <!-- Dark Mode Toggle -->
+      <button id="theme-toggle"
+        class="flex items-center gap-2 px-4 py-2 bg-gray-200 dark:bg-gray-600 text-gray-800 dark:text-white rounded-full hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors">
+        <svg id="theme-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z">
+          </path>
+        </svg>
+      </button>
+      <!-- Mobile Menu Button -->
+      <button id="menu-toggle" class="md:hidden text-white text-2xl">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-blue-300 w-full absolute top-full left-0 px-6 py-4 shadow-md">
+      <ul class="space-y-4 text-white font-semibold">
+        <li class="group relative my-2">
+          <a href="./index.html" class="text-lg font-semibold">Home</a><span
+            class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-12"></span>
+        </li>
+        <li class="group relative my-2">
+          <a href="#destination" class="text-lg font-semibold">Destination</a>
+          <span
+            class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-24"></span>
+        </li>
+        <li class="group relative my-2">
+          <a href="" class="text-lg font-semibold">About Us</a>
+          <span
+            class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-20"></span>
+        </li>
+        <li class="group relative my-2">
+          <a href="#contact" class="text-lg font-semibold">Contact Us</a>
+          <span
+            class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-23"></span>
+        </li>
+      </ul>
+      <button
+        class="w-full mt-4 px-4 py-2 bg-indigo-600 dark:bg-orange-500 text-white font-medium rounded-full hover:bg-indigo-700 dark:hover:bg-orange-600 transition duration-300">
+        Book Now
+      </button>
+    </div>
   </header>
 
-  <!-- Mobile Menu -->
-  <div id="mobile-menu" class="hidden md:hidden bg-blue-300 text-white absolute top-[96px] left-0 w-full z-40">
-    <ul class="flex flex-col items-center space-y-4 py-4">
-      <li class="group relative my-2">
-        <a href="./index.html" class="text-lg font-semibold">Home</a><span
-          class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-12"></span>
-      </li>
-      <li class="group relative my-2">
-        <a href="./destination.html" class="text-lg font-semibold">Destination</a>
-        <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-24"></span>
-      </li>
-      <li class="group relative my-2">
-        <a href="./aboutUs.html" class="text-lg font-semibold">About Us</a>
-        <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-20"></span>
-      </li>
-      <li class="group relative my-2">
-        <a href="" class="text-lg font-semibold">Contact Us</a>
-        <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-23"></span>
-      </li>
-    </ul>
-  </div>
 
   <!-- Main Content -->
   <main>
