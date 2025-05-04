@@ -21,6 +21,7 @@
     --color-gray-500: oklch(55.1% 0.027 264.364);
     --color-gray-600: oklch(44.6% 0.03 256.802);
     --color-gray-700: oklch(37.3% 0.034 259.733);
+    --color-gray-800: oklch(27.8% 0.033 256.848);
     --color-gray-900: oklch(21% 0.034 264.665);
     --color-black: #000;
     --color-white: #fff;
@@ -436,11 +437,20 @@
   .border-indigo-600 {
     border-color: var(--color-indigo-600);
   }
+  .bg-\[\#8B5E3C\] {
+    background-color: #8B5E3C;
+  }
   .bg-\[\#161e3b\] {
     background-color: #161e3b;
   }
   .bg-\[\#3336369b\] {
     background-color: #3336369b;
+  }
+  .bg-\[\#C9A14A\] {
+    background-color: #C9A14A;
+  }
+  .bg-\[\#D6C1A4\] {
+    background-color: #D6C1A4;
   }
   .bg-black {
     background-color: var(--color-black);
@@ -456,6 +466,9 @@
   }
   .bg-gray-600 {
     background-color: var(--color-gray-600);
+  }
+  .bg-gray-700 {
+    background-color: var(--color-gray-700);
   }
   .bg-gray-900 {
     background-color: var(--color-gray-900);
@@ -568,6 +581,9 @@
     --tw-font-weight: var(--font-weight-semibold);
     font-weight: var(--font-weight-semibold);
   }
+  .text-\[\#333333\] {
+    color: #333333;
+  }
   .text-black {
     color: var(--color-black);
   }
@@ -579,6 +595,9 @@
   }
   .text-gray-700 {
     color: var(--color-gray-700);
+  }
+  .text-gray-800 {
+    color: var(--color-gray-800);
   }
   .text-indigo-600 {
     color: var(--color-indigo-600);
@@ -712,6 +731,13 @@
       }
     }
   }
+  .hover\:bg-\[\#C9A14A\] {
+    &:hover {
+      @media (hover: hover) {
+        background-color: #C9A14A;
+      }
+    }
+  }
   .hover\:bg-blue-400 {
     &:hover {
       @media (hover: hover) {
@@ -762,6 +788,13 @@
       }
     }
   }
+  .hover\:text-gray-700 {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-gray-700);
+      }
+    }
+  }
   .hover\:text-white {
     &:hover {
       @media (hover: hover) {
@@ -773,6 +806,13 @@
     &:hover {
       @media (hover: hover) {
         text-decoration-line: none;
+      }
+    }
+  }
+  .hover\:underline {
+    &:hover {
+      @media (hover: hover) {
+        text-decoration-line: underline;
       }
     }
   }
