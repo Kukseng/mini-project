@@ -1,2 +1,14 @@
 @import "tailwindcss";
 
+/* contact page animation */
+@layer base {
+    .icon-anim {
+      transition-duration: 0.5s;
+
+    } 
+    .group:hover .icon-anim {
+      transform: scale(1.5);
+    }
+  }
+  
+  
