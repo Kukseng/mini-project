@@ -43,3 +43,16 @@ body {
     color: var(--text-color);
     transition: all 0.3s ease;
 }
+
+/* contact page animation */
+@layer base {
+    .icon-anim {
+      transition-duration: 0.5s;
+
+    } 
+    .group:hover .icon-anim {
+      transform: scale(1.5);
+    }
+  }
+  
+  

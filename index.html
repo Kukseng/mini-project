@@ -1,29 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="src/output.css">
+  <link rel="stylesheet" href="src/output.css" />
   <link rel="shortcut icon" href="./Asset/logoHaveBg.PNG" type="image/x-icon" />
   <title>Tourism</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
 </head>
 
-<body class="bg-white transition-colors duration-500" id="body">
-
+<body class="bg-white transition-colors duration-500" id="top">
   <header
-    class="w-full h-[96px] 2xl:h-[115px]  xl:h-[107px] bg-blue-300 flex justify-between items-center px-6 md:px-9  lg:px-16 xl:px-28 2xl:px-32  relative z-50 mb-98">
+    class="w-full h-[96px] 2xl:h-[115px] xl:h-[107px] bg-blue-300 flex justify-between items-center px-6 md:px-9 lg:px-16 xl:px-28 2xl:px-32 relative z-50 mb-8 sticky top-0 shadow-lg">
     <div>
       <img src="./Asset/logoNoBg.png" class="w-28 2xl:w-36 xl:w-32 object-contain" alt="logo" />
-
     </div>
     <nav>
       <ul class="hidden md:flex space-x-8 text-white font-semibold">
         <li class="group relative">
-          <a href="#home" class=" underline">Home</a>
+          <a href="index.html" class="underline">Home</a>
           <span
             class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-full"></span>
         </li>
@@ -33,12 +29,12 @@
             class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-full"></span>
         </li>
         <li class="group relative">
-          <a href="#about">About Us</a>
+          <a href="./aboutUs.html">About Us</a>
           <span
             class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-full"></span>
         </li>
         <li class="group relative">
-          <a href="#contact">Contact Us</a>
+          <a href="./contact.html">Contact Us</a>
           <span
             class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-full"></span>
         </li>
@@ -47,7 +43,8 @@
 
     <!-- Dark Mode Toggle -->
     <button id="theme-toggle"
-      class="flex items-center gap-2 px-4 py-2 bg-gray-200 dark:bg-gray-600 text-gray-800 dark:text-white rounded-full hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors">
+      class="flex items-center gap-2 px-4 py-2 bg-gray-200 dark:bg-gray-600 text-gray-800 dark:text-white rounded-full hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors"
+      aria-label="Toggle dark mode">
       <svg id="theme-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z">
         </path>
@@ -55,44 +52,39 @@
     </button>
 
     <!-- Mobile Menu Toggle Button -->
-    <button id="menu-toggle" class="md:hidden text-white text-2xl">
+    <button id="menu-toggle" class="md:hidden text-white text-2xl" aria-label="Toggle mobile menu">
       <i class="fas fa-bars"></i>
     </button>
   </header>
 
   <!-- Mobile Menu Dropdown -->
-  <div id="mobile-menu"
-    class="hidden absolute top-[100px] left-0 w-full bg-[#161e3b] text-white flex flex-col px-6 py-4 space-y-4 text-base z-40 md:hidden">
-    <!-- Close Button -->
-    <div class="w-full flex justify-end">
-      <button id="menu-close" class="text-white text-2xl">
-        <i class="fas fa-times"></i>
-      </button>
-    </div>
-
-    <!-- Mobile Links -->
-    <ul class=" space-x-8 text-white font-semibold px-4">
+  <div id="mobile-menu" class="hidden md:hidden bg-blue-300 text-white absolute top-[96px] left-0 w-full z-40">
+    <ul class="flex flex-col items-center space-y-4 py-4">
       <li class="group relative my-2">
-        <a href="#home">Home</a>
-        <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-12"></span>
+        <a href="index.html" class="text-lg font-semibold">Home</a>
+        <span
+          class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-full"></span>
       </li>
       <li class="group relative my-2">
-        <a href="#destination">Destination</a>
-        <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-24"></span>
+        <a href="#destination" class="text-lg font-semibold">Destination</a>
+        <span
+          class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-full"></span>
       </li>
       <li class="group relative my-2">
-        <a href="#about">About Us</a>
-        <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-20"></span>
+        <a href="./aboutUs.html" class="text-lg font-semibold">About Us</a>
+        <span
+          class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-full"></span>
       </li>
       <li class="group relative my-2">
-        <a href="#contact">Contact Us</a>
-        <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-20"></span>
+        <a href="./contact.html" class="text-lg font-semibold">Contact Us</a>
+        <span
+          class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-full"></span>
       </li>
     </ul>
   </div>
 
   <!-- Footer -->
-  <footer class="bg-[#161e3b] text-white pt-12  px-6 md:px-12  lg:px-16 xl:px-28 2xl:px-32 ">
+  <footer class="bg-[#161e3b] text-white pt-12  px-6 md:px-12  lg:px-16 xl:px-28 2xl:px-32">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 2xl:grid-cols-4 gap-10 lg:gap-4 pb-10">
 
       <!-- Logo + Description -->
@@ -237,77 +229,69 @@
     <div class="border-t border-gray-700 mt-6 py-4 flex flex-col md:flex-row justify-center items-center text-sm px-4">
       <p>Copyright 2025 Tourism. All Rights Reserved.</p>
       <!-- go to top -->
-      <a href="#top" target="_top"
+      <a href="" target="_top"
         class="fixed bottom-6 right-6 bg-cyan-500 text-white rounded-full p-2 px-3.5 shadow-lg hover:bg-cyan-600">
         <i class="fas fa-arrow-up"></i>
       </a>
   </footer>
+
+  <script>
+    // Mobile Menu Toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Dark Mode Toggle
+    const button = document.getElementById("theme-toggle");
+    const icon = document.getElementById("theme-icon");
+    const text = document.getElementById("theme-text");
+
+    const initTheme = () => {
+      if (
+        localStorage.theme === "dark" ||
+        (!localStorage.theme &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+        updateButton("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+        updateButton("light");
+      }
+    };
+
+    const updateButton = (theme) => {
+      if (theme === "dark") {
+        icon.innerHTML =
+          '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>';
+        text.textContent = "Dark Mode";
+      } else {
+        icon.innerHTML = `
+          <circle cx="12" cy="12" r="4"/>
+          <path d="M12 2v2"/>
+          <path d="M12 20v2"/>
+          <path d="m4.93 4.93 1.41 1.41"/>
+          <path d="m17.66 17.66 1.41 1.41"/>
+          <path d="M2 12h2"/>
+          <path d="M20 12h2"/>
+          <path d="m6.34 17.66-1.41 1.41"/>
+          <path d="m19.07 4.93-1.41 1.41"/>
+        `;
+        text.textContent = "Light Mode";
+      }
+    };
+
+    button.addEventListener("click", () => {
+      const isDark = document.documentElement.classList.toggle("dark");
+      localStorage.theme = isDark ? "dark" : "light";
+      updateButton(isDark ? "dark" : "light");
+    });
+
+    initTheme();
+  </script>
 </body>
-<script>
-  const circle = document.getElementById('circle');
-  const body = document.getElementById('body');
-
-  const menuToggle = document.getElementById('menu-toggle');
-  const menuClose = document.getElementById('menu-close');
-  const mobileMenu = document.getElementById('mobile-menu');
-
-  menuToggle.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
-  });
-
-  menuClose.addEventListener('click', () => {
-    mobileMenu.classList.add('hidden');
-  });
-
-  // Dark Mode Toggle
-  const button = document.getElementById("theme-toggle");
-  const icon = document.getElementById("theme-icon");
-  const text = document.getElementById("theme-text");
-
-  const initTheme = () => {
-    if (
-      localStorage.theme === "dark" ||
-      (!localStorage.theme &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches)
-    ) {
-      document.documentElement.classList.add("dark");
-      updateButton("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-      updateButton("light");
-    }
-  };
-
-  // Update button appearance
-  const updateButton = (theme) => {
-    if (theme === "dark") {
-      icon.innerHTML =
-        '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>';
-      text.textContent = "Dark Mode";
-    } else {
-      icon.innerHTML = `
-                        <circle cx="12" cy="12" r="4"/>
-                        <path d="M12 2v2"/>
-                        <path d="M12 20v2"/>
-                        <path d="m4.93 4.93 1.41 1.41"/>
-                        <path d="m17.66 17.66 1.41 1.41"/>
-                        <path d="M2 12h2"/>
-                        <path d="M20 12h2"/>
-                        <path d="m6.34 17.66-1.41 1.41"/>
-                        <path d="m19.07 4.93-1.41 1.41"/>
-                    `;
-      text.textContent = "Light Mode";
-    }
-  };
-
-  // Toggle theme
-  button.addEventListener("click", () => {
-    const isDark = document.documentElement.classList.toggle("dark");
-    localStorage.theme = isDark ? "dark" : "light";
-    updateButton(isDark ? "dark" : "light");
-  });
-  initTheme();
-
-</script>
 
 </html>
