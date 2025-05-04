@@ -45,12 +45,7 @@
             transform: translateX(-50%);
             width: 4px;
             height: 100%;
-            background-color: var(--color-lprimary);
-        }
-        
-        .timeline-item {
-            position: relative;
-            margin-bottom: 2rem;
+            background-color: #4f46e5; /* Indigo-600 */
         }
         
         .timeline-dot {
@@ -60,8 +55,8 @@
             width: 24px;
             height: 24px;
             border-radius: 50%;
-            background-color: var(--color-lsecondary);
-            border: 4px solid var(--color-lbackground);
+            background-color: #f97316; /* Orange-500 for dark mode */
+            border: 4px solid #ffffff; /* White border */
             z-index: 2;
         }
         
@@ -112,54 +107,53 @@
         }
     </style>
 </head>
-<body class="bg-lbackground dark:bg-dbackground">
+<body class="bg-white dark:bg-gray-900">
     <!-- Navigation -->
-    <header class="navbar-fixed bg-lprimary dark:bg-dprimary flex justify-between items-center px-6 md:px-9 lg:px-16 xl:px-28 2xl:px-32 h-[96px] xl:h-[107px] 2xl:h-[115px] relative z-50 shadow-md">
+    <header class="navbar-fixed bg-blue-300 dark:bg-gray-800 flex justify-between items-center px-6 md:px-9 lg:px-16 xl:px-28 2xl:px-32 h-[96px] xl:h-[107px] 2xl:h-[115px] relative z-50 shadow-md">
         <div>
-            <img src="./Asset/logoNoBg.png" class="w-28 2xl:w-36 xl:w-32 object-contain" alt="logo" />
-    
-          </div>
+            <img src="./Asset/logoNoBg.png" class="w-28 2xl:w-36 xl:w-32 Turnsoutobject-contain" alt="logo" />
+        </div>
         <nav>
-            <ul class="hidden md:flex space-x-8 text-ltext-h dark:text-dtext-h font-semibold">
+            <ul class="hidden md:flex space-x-8 text-white font-semibold">
                 <li class="group relative">
-                    <a href="#home" class="hover:underline">Home</a>
-                    <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-ltext-m dark:bg-dtext-m transition-all duration-300 group-hover:w-full"></span>
+                    <a href="./index.html" class="hover:underline">Home</a>
+                    <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-full"></span>
                 </li>
                 <li class="group relative">
-                    <a href="#destination">Destination</a>
-                    <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-ltext-m dark:bg-dtext-m transition-all duration-300 group-hover:w-full"></span>
+                    <a href="./destination.html">Destination</a>
+                    <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-full"></span>
                 </li>
                 <li class="group relative">
-                    <a href="#about">About Us</a>
-                    <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-ltext-m dark:bg-dtext-m transition-all duration-300 group-hover:w-full"></span>
+                    <a href="./aboutUs.html">About Us</a>
+                    <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-full"></span>
                 </li>
                 <li class="group relative">
-                    <a href="#contact">Contact Us</a>
-                    <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-ltext-m dark:bg-dtext-m transition-all duration-300 group-hover:w-full"></span>
+                    <a href="./contact.html">Contact Us</a>
+                    <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-full"></span>
                 </li>
             </ul>
         </nav>
         <div class="flex items-center space-x-4">
             <!-- Dark Mode Toggle -->
-            <div id="toggle" class="w-15 h-8 bg-gray-300 rounded-full p-1 flex items-center cursor-pointer transition-colors duration-500">
-                <div id="circle" class="bg-white w-6 h-6 rounded-full shadow-md flex items-center justify-center transform transition-transform duration-300">
-                    <span id="icon" class="text-black text-[14px]"><i class="fas fa-moon"></i></span>
-                </div>
-            </div>
+            <button id="theme-toggle" class="flex items-center gap-2 px-4 py-2 bg-gray-200 dark:bg-gray-600 text-gray-800 dark:text-white rounded-full hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors">
+                <svg id="theme-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+                </svg>
+            </button>
             <!-- Mobile Menu Button -->
-            <button id="menu-toggle" class="md:hidden text-ltext-h dark:text-dtext-h text-2xl">
+            <button id="menu-toggle" class="md:hidden text-white text-2xl">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-lprimary dark:bg-dprimary w-full absolute top-full left-0 px-6 py-4 shadow-md">
-            <ul class="space-y-4 text-ltext-h dark:text-dtext-h font-semibold">
-                <li><a href="#home" class="block hover:underline">Home</a></li>
-                <li><a href="#destination" class="block hover:underline">Destination</a></li>
-                <li><a href="#about" class="block hover:underline">About Us</a></li>
-                <li><a href="#contact" class="block hover:underline">Contact Us</a></li>
+        <div id="mobile-menu" class="hidden md:hidden bg-blue-300 dark:bg-gray-800 w-full absolute top-full left-0 px-6 py-4 shadow-md">
+            <ul class="space-y-4 text-white font-semibold">
+                <li><a href="./index.html" class="block hover:underline">Home</a></li>
+                <li><a href="./destination.html" class="block hover:underline">Destination</a></li>
+                <li><a href="./aboutUs.html" class="block hover:underline">About Us</a></li>
+                <li><a href="./contact.html" class="block hover:underline">Contact Us</a></li>
             </ul>
-            <button class="w-full mt-4 px-4 py-2 bg-lsecondary dark:bg-dsecondary text-white font-medium rounded-full hover:bg-opacity-90 transition duration-300">
+            <button class="w-full mt-4 px-4 py-2 bg-indigo-600 dark:bg-orange-500 text-white font-medium rounded-full hover:bg-indigo-700 dark:hover:bg-orange-600 transition duration-300">
                 Book Now
             </button>
         </div>
@@ -170,7 +164,7 @@
         <div class="text-center px-4">
             <h1 class="text-4xl md:text-6xl font-bold text-white mb-4">Discover Siem Reap & Angkor Wat</h1>
             <p class="text-xl text-white mb-8">Experience the ancient wonders of Cambodia's magnificent temple complex</p>
-            <button class="px-8 py-3 bg-lsecondary dark:bg-dsecondary text-white font-medium rounded-full hover:bg-opacity-90 transition duration-300">
+            <button class="px-8 py-3 bg-indigo-600 dark:bg-orange-500 text-white font-medium rounded-full hover:bg-indigo-700 dark:hover:bg-orange-600 transition duration-300">
                 Explore Tours
             </button>
         </div>
@@ -179,9 +173,9 @@
     <!-- Breadcrumbs -->
     <div class="container mx-auto px-4 py-4">
         <div class="flex items-center text-sm">
-            <a href="index.html" class="text-laccent dark:text-daccent hover:text-opacity-80">Home</a>
-            <span class="mx-2 text-ltext-m dark:text-dtext-m">/</span>
-            <a href="destinations.html" class="text-laccent dark:text-daccent hover:text-opacity-80">Destinations</a>
+            <a href="index.html" class="text-indigo-600 dark:text-orange-400 hover:text-indigo-700 dark:hover:text-orange-500">Home</a>
+            <span class="mx-2 text-gray-500 dark:text-gray-300">/</span>
+            <a href="destinations.html" class="text-indigo-600 dark:text-orange-400 hover:text-indigo-700 dark:hover:text-orange-500">Destinations</a>
         </div>
     </div>
 
@@ -189,80 +183,80 @@
     <section class="container mx-auto px-4 py-10">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div class="lg:col-span-2">
-                <h2 class="text-3xl font-bold text-ltext-h dark:text-dtext-h mb-6">The Majestic Angkor Wat</h2>
-                <p class="text-ltext-m dark:text-dtext-m mb-4">Angkor Wat, a UNESCO World Heritage site, is the largest religious monument in the world and the crowning jewel of Cambodia's ancient Khmer Empire. Built in the early 12th century, this architectural masterpiece spans over 400 acres and stands as a testament to the ingenious craftsmanship of the Khmer civilization.</p>
-                <p class="text-ltext-m dark:text-dtext-m mb-6">Originally constructed as a Hindu temple dedicated to the god Vishnu for the Khmer Empire, it gradually transformed into a Buddhist temple by the end of the 12th century. The temple's design represents Mount Meru, the mythical home of the gods in Hindu mythology, with its five towers symbolizing the five peaks of the mountain.</p>
+                <h2 class="text-3xl font-bold text-gray-800 dark:text-white mb-6">The Majestic Angkor Wat</h2>
+                <p class="text-gray-700 dark:text-gray-300 mb-4">Angkor Wat, a UNESCO World Heritage site, is the largest religious monument in the world and the crowning jewel of Cambodia's ancient Khmer Empire. Built in the early 12th century, this architectural masterpiece spans over 400 acres and stands as a testament to the ingenious craftsmanship of the Khmer civilization.</p>
+                <p class="text-gray-700 dark:text-gray-300 mb-6">Originally constructed as a Hindu temple dedicated to the god Vishnu for the Khmer Empire, it gradually transformed into a Buddhist temple by the end of the 12th century. The temple's design represents Mount Meru, the mythical home of the gods in Hindu mythology, with its five towers symbolizing the five peaks of the mountain.</p>
                 <div class="grid grid-cols-2 gap-4 mb-6">
                     <img src="https://thebettercambodia.com/wp-content/uploads/2024/06/fn-2024-06-03-11-46-12-0.jpg" alt="Angkor Wat Temple at Sunrise" class="rounded-lg shadow-md w-full h-48 object-cover">
                     <img src="https://images.unsplash.com/photo-1599283787923-51b965a58b05?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YW5na29yJTIwd2F0fGVufDB8fDB8fHww" alt="Angkor Wat Towers" class="rounded-lg shadow-md w-full h-48 object-cover">
                 </div>
-                <p class="text-ltext-m dark:text-dtext-m">The temple is admired for its grandeur and harmony of design, as well as the extensive bas-reliefs and devatas (guardian spirits) adorning its walls. The best time to visit is during sunrise or sunset when the temple is bathed in golden light, creating a truly magical experience that will stay with you forever.</p>
+                <p class="text-gray-700 dark:text-gray-300">The temple is admired for its grandeur and harmony of design, as well as the extensive bas-reliefs and devatas (guardian spirits) adorning its walls. The best time to visit is during sunrise or sunset when the temple is bathed in golden light, creating a truly magical experience that will stay with you forever.</p>
             </div>
-            <div class="bg-lsurface dark:bg-dsurface p-6 rounded-lg shadow-md h-fit">
-                <h3 class="text-xl font-bold text-ltext-h dark:text-dtext-h mb-4">Quick Facts</h3>
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md h-fit">
+                <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-4">Quick Facts</h3>
                 <ul class="space-y-3">
                     <li class="flex items-start">
-                        <span class="bg-lsecondary dark:bg-dsecondary text-white p-1 rounded mr-3 mt-1"><i class="fas fa-map-marker-alt"></i></span>
+                        <span class="bg-indigo-600 dark:bg-orange-500 text-white p-1 rounded mr-3 mt-1"><i class="fas fa-map-marker-alt"></i></span>
                         <div>
-                            <span class="font-semibold text-ltext-h dark:text-dtext-h">Location:</span>
-                            <p class="text-ltext-m dark:text-dtext-m">Siem Reap Province, Cambodia</p>
+                            <span class="font-semibold text-gray-800 dark:text-white">Location:</span>
+                            <p class="text-gray-700 dark:text-gray-300">Siem Reap Province, Cambodia</p>
                         </div>
                     </li>
                     <li class="flex items-start">
-                        <span class="bg-lsecondary dark:bg-dsecondary text-white p-1 rounded mr-3 mt-1"><i class="fas fa-clock"></i></span>
+                        <span class="bg-indigo-600 dark:bg-orange-500 text-white p-1 rounded mr-3 mt-1"><i class="fas fa-clock"></i></span>
                         <div>
-                            <span class="font-semibold text-ltext-h dark:text-dtext-h">Best Time to Visit:</span>
-                            <p class="text-ltext-m dark:text-dtext-m">November to February (dry season)</p>
+                            <span class="font-semibold text-gray-800 dark:text-white">Best Time to Visit:</span>
+                            <p class="text-gray-700 dark:text-gray-300">November to February (dry season)</p>
                         </div>
                     </li>
                     <li class="flex items-start">
-                        <span class="bg-lsecondary dark:bg-dsecondary text-white p-1 rounded mr-3 mt-1"><i class="fas fa-language"></i></span>
+                        <span class="bg-indigo-600 dark:bg-orange-500 text-white p-1 rounded mr-3 mt-1"><i class="fas fa-language"></i></span>
                         <div>
-                            <span class="font-semibold text-ltext-h dark:text-dtext-h">Local Language:</span>
-                            <p class="text-ltext-m dark:text-dtext-m">Khmer</p>
+                            <span class="font-semibold text-gray-800 dark:text-white">Local Language:</span>
+                            <p class="text-gray-700 dark:text-gray-300">Khmer</p>
                         </div>
                     </li>
                     <li class="flex items-start">
-                        <span class="bg-lsecondary dark:bg-dsecondary text-white p-1 rounded mr-3 mt-1"><i class="fas fa-money-bill-wave"></i></span>
+                        <span class="bg-indigo-600 dark:bg-orange-500 text-white p-1 rounded mr-3 mt-1"><i class="fas fa-money-bill-wave"></i></span>
                         <div>
-                            <span class="font-semibold text-ltext-h dark:text-dtext-h">Currency:</span>
-                            <p class="text-ltext-m dark:text-dtext-m">Cambodian Riel (USD widely accepted)</p>
+                            <span class="font-semibold text-gray-800 dark:text-white">Currency:</span>
+                            <p class="text-gray-700 dark:text-gray-300">Cambodian Riel (USD widely accepted)</p>
                         </div>
                     </li>
                     <li class="flex items-start">
-                        <span class="bg-lsecondary dark:bg-dsecondary text-white p-1 rounded mr-3 mt-1"><i class="fas fa-calendar-day"></i></span>
+                        <span class="bg-indigo-600 dark:bg-orange-500 text-white p-1 rounded mr-3 mt-1"><i class="fas fa-calendar-day"></i></span>
                         <div>
-                            <span class="font-semibold text-ltext-h dark:text-dtext-h">Opening Hours:</span>
-                            <p class="text-ltext-m dark:text-dtext-m">5:00 AM - 5:30 PM daily</p>
+                            <span class="font-semibold text-gray-800 dark:text-white">Opening Hours:</span>
+                            <p class="text-gray-700 dark:text-gray-300">5:00 AM - 5:30 PM daily</p>
                         </div>
                     </li>
                 </ul>
-                <div class="border-t border-gray-300 my-6"></div>
-                <h3 class="text-xl font-bold text-ltext-h dark:text-dtext-h mb-4">Popular Tours</h3>
+                <div class="border-t border-gray-300 dark:border-gray-600 my-6"></div>
+                <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-4">Popular Tours</h3>
                 <div class="space-y-4">
                     <div class="flex items-center">
                         <img src="https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/13/2b/cc/9f.jpg" alt="Sunrise Tour at Angkor Wat" class="w-16 h-16 object-cover rounded-lg mr-4">
                         <div>
-                            <h4 class="font-semibold text-ltext-h dark:text-dtext-h">Sunrise Tour</h4>
-                            <p class="text-sm text-ltext-m dark:text-dtext-m">From $45 per person</p>
+                            <h4 class="font-semibold text-gray-800 dark:text-white">Sunrise Tour</h4>
+                            <p class="text-sm text-gray-700 dark:text-gray-300">From $45 per person</p>
                         </div>
                     </div>
                     <div class="flex items-center">
                         <img src="https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/10/01/ea/68.jpg" alt="Full Day Temple Tour" class="w-16 h-16 object-cover rounded-lg mr-4">
                         <div>
-                            <h4 class="font-semibold text-ltext-h dark:text-dtext-h">Full Day Temple Tour</h4>
-                            <p class="text-sm text-ltext-m dark:text-dtext-m">From $75 per person</p>
+                            <h4 class="font-semibold text-gray-800 dark:text-white">Full Day Temple Tour</h4>
+                            <p class="text-sm text-gray-700 dark:text-gray-300">From $75 per person</p>
                         </div>
                     </div>
                     <div class="flex items-center">
                         <img src="https://www.areacambodia.com/wp-content/uploads/2023/09/Angkor-Wat-A-Journey-Through-Time-and-Beauty-The-Ultimate-Familys-Photo-Gallery-Ploy-Photography.jpg" alt="Photography Tour at Angkor Wat" class="w-16 h-16 object-cover rounded-lg mr-4">
                         <div>
-                            <h4 class="font-semibold text-ltext-h dark:text-dtext-h">Photography Tour</h4>
-                            <p class="text-sm text-ltext-m dark:text-dtext-m">From $95 per person</p>
+                            <h4 class="font-semibold text-gray-800 dark:text-white">Photography Tour</h4>
+                            <p class="text-sm text-gray-700 dark:text-gray-300">From $95 per person</p>
                         </div>
                     </div>
                 </div>
-                <button class="w-full bg-lsecondary dark:bg-dsecondary text-white font-medium py-3 rounded-lg mt-6 hover:bg-opacity-90 transition duration-300">
+                <button class="w-full bg-indigo-600 dark:bg-orange-500 text-white font-medium py-3 rounded-lg mt-6 hover:bg-indigo-700 dark:hover:bg-orange-600 transition duration-300">
                     View All Tours
                 </button>
             </div>
@@ -270,118 +264,118 @@
     </section>
 
     <!-- Must-See Attractions -->
-    <section class="bg-lsurface dark:bg-dsurface py-16 px-4">
+    <section class="bg-gray-100 dark:bg-gray-800 py-16 px-4">
         <div class="container mx-auto">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-ltext-h dark:text-dtext-h mb-2">Must-See Attractions</h2>
-                <p class="text-ltext-m dark:text-dtext-m">Explore the top sights of the ancient Angkor Archaeological Park</p>
+                <h2 class="text-3xl font-bold text-gray-800 dark:text-white mb-2">Must-See Attractions</h2>
+                <p class="text-gray-700 dark:text-gray-300">Explore the top sights of the ancient Angkor Archaeological Park</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="card bg-white dark:bg-dsurface rounded-lg overflow-hidden shadow-md">
+                <div class="card bg-white dark:bg-gray-700 rounded-lg overflow-hidden shadow-md">
                     <img src="https://images.pexels.com/photos/15928691/pexels-photo-15928691.jpeg?cs=srgb&dl=pexels-sergk1-15928691.jpg&fm=jpg" alt="Bayon Temple Smiling Faces" class="w-full h-64 object-cover">
                     <div class="p-6">
                         <div class="flex justify-between items-start mb-2">
-                            <h3 class="text-xl font-bold text-ltext-h dark:text-dtext-h">Bayon Temple</h3>
-                            <span class="bg-lsecondary dark:bg-dsecondary text-white text-xs font-bold px-2 py-1 rounded">TOP SIGHT</span>
+                            <h3 class="text-xl font-bold text-gray-800 dark:text-white">Bayon Temple</h3>
+                            <span class="bg-indigo-600 dark:bg-orange-500 text-white text-xs font-bold px-2 py-1 rounded">TOP SIGHT</span>
                         </div>
-                        <p class="text-ltext-m dark:text-dtext-m mb-4">Famous for its 216 smiling stone faces, this temple stands at the center of Angkor Thom and represents the creative genius of Jayavarman VII.</p>
+                        <p class="text-gray-700 dark:text-gray-300 mb-4">Famous for its 216 smiling stone faces, this temple stands at the center of Angkor Thom and represents the creative genius of Jayavarman VII.</p>
                         <div class="flex items-center justify-between">
                             <div class="flex items-center">
-                                <i class="fas fa-walking text-lsecondary dark:text-dsecondary mr-2"></i>
-                                <span class="text-sm text-ltext-m dark:text-dtext-m">20 min from Angkor Wat</span>
+                                <i class="fas fa-walking text-indigo-600 dark:text-orange-500 mr-2"></i>
+                                <span class="text-sm text-gray-700 dark:text-gray-300">20 min from Angkor Wat</span>
                             </div>
-                            <a href="#" class="text-laccent dark:text-daccent hover:underline font-medium">Learn More →</a>
+                            <a href="#" class="text-indigo-600 dark:text-orange-400 hover:underline font-medium">Learn More →</a>
                         </div>
                     </div>
                 </div>
-                <div class="card bg-white dark:bg-dsurface rounded-lg overflow-hidden shadow-md">
+                <div class="card bg-white dark:bg-gray-700 rounded-lg overflow-hidden shadow-md">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSK5eluldhJp-HCBsxa14IzVV_Sl-XrET3VGQ&s" alt="Ta Prohm Tree Roots" class="w-full h-64 object-cover">
                     <div class="p-6">
                         <div class="flex justify-between items-start mb-2">
-                            <h3 class="text-xl font-bold text-ltext-h dark:text-dtext-h">Ta Prohm</h3>
-                            <span class="bg-lsecondary dark:bg-dsecondary text-white text-xs font-bold px-2 py-1 rounded">FEATURED</span>
+                            <h3 class="text-xl font-bold text-gray-800 dark:text-white">Ta Prohm</h3>
+                            <span class="bg-indigo-600 dark:bg-orange-500 text-white text-xs font-bold px-2 py-1 rounded">FEATURED</span>
                         </div>
-                        <p class="text-ltext-m dark:text-dtext-m mb-4">Known as the "Tomb Raider Temple," Ta Prohm is famous for the massive tree roots growing over its ruins, creating a mystical atmosphere.</p>
+                        <p class="text-gray-700 dark:text-gray-300 mb-4">Known as the "Tomb Raider Temple," Ta Prohm is famous for the massive tree roots growing over its ruins, creating a mystical atmosphere.</p>
                         <div class="flex items-center justify-between">
                             <div class="flex items-center">
-                                <i class="fas fa-walking text-lsecondary dark:text-dsecondary mr-2"></i>
-                                <span class="text-sm text-ltext-m dark:text-dtext-m">30 min from Angkor Wat</span>
+                                <i class="fas fa-walking text-indigo-600 dark:text-orange-500 mr-2"></i>
+                                <span class="text-sm text-gray-700 dark:text-gray-300">30 min from Angkor Wat</span>
                             </div>
-                            <a href="#" class="text-laccent dark:text-daccent hover:underline font-medium">Learn More →</a>
+                            <a href="#" class="text-indigo-600 dark:text-orange-400 hover:underline font-medium">Learn More →</a>
                         </div>
                     </div>
                 </div>
-                <div class="card bg-white dark:bg-dsurface rounded-lg overflow-hidden shadow-md">
+                <div class="card bg-white dark:bg-gray-700 rounded-lg overflow-hidden shadow-md">
                     <img src="https://t4.ftcdn.net/jpg/00/25/80/87/360_F_25808712_exrPC9p1IqunCfVp6SmaZ0CTOgfvgKWA.jpg" alt="Banteay Srei Carvings" class="w-full h-64 object-cover">
                     <div class="p-6">
                         <div class="flex justify-between items-start mb-2">
-                            <h3 class="text-xl font-bold text-ltext-h dark:text-dtext-h">Banteay Srei</h3>
-                            <span class="bg-lprimary dark:bg-dprimary text-white text-xs font-bold px-2 py-1 rounded">MUST SEE</span>
+                            <h3 class="text-xl font-bold text-gray-800 dark:text-white">Banteay Srei</h3>
+                            <span class="bg-blue-300 dark:bg-gray-600 text-white text-xs font-bold px-2 py-1 rounded">MUST SEE</span>
                         </div>
-                        <p class="text-ltext-m dark:text-dtext-m mb-4">The "Citadel of Women" is renowned for its exquisite pink sandstone carvings and miniature scale, considered the jewel of Khmer art.</p>
+                        <p class="text-gray-700 dark:text-gray-300 mb-4">The "Citadel of Women" is renowned for its exquisite pink sandstone carvings and miniature scale, considered the jewel of Khmer art.</p>
                         <div class="flex items-center justify-between">
                             <div class="flex items-center">
-                                <i class="fas fa-car text-lsecondary dark:text-dsecondary mr-2"></i>
-                                <span class="text-sm text-ltext-m dark:text-dtext-m">45 min from Angkor Wat</span>
+                                <i class="fas fa-car text-indigo-600 dark:text-orange-500 mr-2"></i>
+                                <span class="text-sm text-gray-700 dark:text-gray-300">45 min from Angkor Wat</span>
                             </div>
-                            <a href="#" class="text-laccent dark:text-daccent hover:underline font-medium">Learn More →</a>
+                            <a href="#" class="text-indigo-600 dark:text-orange-400 hover:underline font-medium">Learn More →</a>
                         </div>
                     </div>
                 </div>
-                <div class="card bg-white dark:bg-dsurface rounded-lg overflow-hidden shadow-md">
+                <div class="card bg-white dark:bg-gray-700 rounded-lg overflow-hidden shadow-md">
                     <img src="https://cdn.pixabay.com/photo/2016/04/24/13/40/angkor-thom-1349581_1280.jpg" alt="Angkor Thom Gates" class="w-full h-64 object-cover">
                     <div class="p-6">
                         <div class="flex justify-between items-start mb-2">
-                            <h3 class="text-xl font-bold text-ltext-h dark:text-dtext-h">Angkor Thom</h3>
-                            <span class="bg-lprimary dark:bg-dprimary text-white text-xs font-bold px-2 py-1 rounded">MUST SEE</span>
+                            <h3 class="text-xl font-bold text-gray-800 dark:text-white">Angkor Thom</h3>
+                            <span class="bg-blue-300 dark:bg-gray-600 text-white text-xs font-bold px-2 py-1 rounded">MUST SEE</span>
                         </div>
-                        <p class="text-ltext-m dark:text-dtext-m mb-4">The last great capital of the Khmer Empire, featuring impressive gates with massive stone faces and the Terrace of the Elephants.</p>
+                        <p class="text-gray-700 dark:text-gray-300 mb-4">The last great capital of the Khmer Empire, featuring impressive gates with massive stone faces and the Terrace of the Elephants.</p>
                         <div class="flex items-center justify-between">
                             <div class="flex items-center">
-                                <i class="fas fa-walking text-lsecondary dark:text-dsecondary mr-2"></i>
-                                <span class="text-sm text-ltext-m dark:text-dtext-m">15 min from Angkor Wat</span>
+                                <i class="fas fa-walking text-indigo-600 dark:text-orange-500 mr-2"></i>
+                                <span class="text-sm text-gray-700 dark:text-gray-300">15 min from Angkor Wat</span>
                             </div>
-                            <a href="#" class="text-laccent dark:text-daccent hover:underline font-medium">Learn More →</a>
+                            <a href="#" class="text-indigo-600 dark:text-orange-400 hover:underline font-medium">Learn More →</a>
                         </div>
                     </div>
                 </div>
-                <div class="card bg-white dark:bg-dsurface rounded-lg overflow-hidden shadow-md">
+                <div class="card bg-white dark:bg-gray-700 rounded-lg overflow-hidden shadow-md">
                     <img src="https://c1.wallpaperflare.com/preview/698/347/605/pre-rup-mountain-temple-temple-travel-antique.jpg" alt="Pre Rup Temple" class="w-full h-64 object-cover">
                     <div class="p-6">
                         <div class="flex justify-between items-start mb-2">
-                            <h3 class="text-xl font-bold text-ltext-h dark:text-dtext-h">Pre Rup</h3>
-                            <span class="bg-lprimary dark:bg-dprimary text-white text-xs font-bold px-2 py-1 rounded">SUNSET SPOT</span>
+                            <h3 class="text-xl font-bold text-gray-800 dark:text-white">Pre Rup</h3>
+                            <span class="bg-blue-300 dark:bg-gray-600 text-white text-xs font-bold px-2 py-1 rounded">SUNSET SPOT</span>
                         </div>
-                        <p class="text-ltext-m dark:text-dtext-m mb-4">A temple mountain dedicated to Hindu god Shiva, Pre Rup is one of the best spots to watch the sunset over the Angkor Archaeological Park.</p>
+                        <p class="text-gray-700 dark:text-gray-300 mb-4">A temple mountain dedicated to Hindu god Shiva, Pre Rup is one of the best spots to watch the sunset over the Angkor Archaeological Park.</p>
                         <div class="flex items-center justify-between">
                             <div class="flex items-center">
-                                <i class="fas fa-car text-lsecondary dark:text-dsecondary mr-2"></i>
-                                <span class="text-sm text-ltext-m dark:text-dtext-m">25 min from Angkor Wat</span>
+                                <i class="fas fa-car text-indigo-600 dark:text-orange-500 mr-2"></i>
+                                <span class="text-sm text-gray-700 dark:text-gray-300">25 min from Angkor Wat</span>
                             </div>
-                            <a href="#" class="text-laccent dark:text-daccent hover:underline font-medium">Learn More →</a>
+                            <a href="#" class="text-indigo-600 dark:text-orange-400 hover:underline font-medium">Learn More →</a>
                         </div>
                     </div>
                 </div>
-                <div class="card bg-white dark:bg-dsurface rounded-lg overflow-hidden shadow-md">
+                <div class="card bg-white dark:bg-gray-700 rounded-lg overflow-hidden shadow-md">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYu5M0pXgoR6Nx-zXbeLvi4D9OeZ1KAyuK4A&s" alt="Phnom Bakheng Sunset" class="w-full h-64 object-cover">
                     <div class="p-6">
                         <div class="flex justify-between items-start mb-2">
-                            <h3 class="text-xl font-bold text-ltext-h dark:text-dtext-h">Phnom Bakheng</h3>
-                            <span class="bg-lsecondary dark:bg-dsecondary text-white text-xs font-bold px-2 py-1 rounded">POPULAR</span>
+                            <h3 class="text-xl font-bold text-gray-800 dark:text-white">Phnom Bakheng</h3>
+                            <span class="bg-indigo-600 dark:bg-orange-500 text-white text-xs font-bold px-2 py-1 rounded">POPULAR</span>
                         </div>
-                        <p class="text-ltext-m dark:text-dtext-m mb-4">This hilltop temple is the most popular spot for sunset views of Angkor Wat. Visit early to secure a good viewing position.</p>
+                        <p class="text-gray-700 dark:text-gray-300 mb-4">This hilltop temple is the most popular spot for sunset views of Angkor Wat. Visit early to secure a good viewing position.</p>
                         <div class="flex items-center justify-between">
                             <div class="flex items-center">
-                                <i class="fas fa-hiking text-lsecondary dark:text-dsecondary mr-2"></i>
-                                <span class="text-sm text-ltext-m dark:text-dtext-m">20 min hike from base</span>
+                                <i class="fas fa-hiking text-indigo-600 dark:text-orange-500 mr-2"></i>
+                                <span class="text-sm text-gray-700 dark:text-gray-300">20 min hike from base</span>
                             </div>
-                            <a href="#" class="text-laccent dark:text-daccent hover:underline font-medium">Learn More →</a>
+                            <a href="#" class="text-indigo-600 dark:text-orange-400 hover:underline font-medium">Learn More →</a>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="text-center mt-10">
-                <button class="border-2 border-laccent dark:border-daccent text-laccent dark:text-daccent font-medium px-8 py-3 rounded-full hover:bg-laccent dark:hover:bg-daccent hover:text-white transition duration-300">
+                <button class="border-2 border-indigo-600 dark:border-orange-400 text-indigo-600 dark:text-orange-400 font-medium px-8 py-3 rounded-full hover:bg-indigo-600 dark:hover:bg-orange-500 hover:text-white transition duration-300">
                     View All Attractions
                 </button>
             </div>
@@ -392,65 +386,65 @@
     <section class="py-16 px-4">
         <div class="container mx-auto">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-ltext-h dark:text-dtext-h mb-2">Historical Timeline</h2>
-                <p class="text-ltext-m dark:text-dtext-m">Tracing the rich history of Angkor Wat and the Khmer Empire</p>
+                <h2 class="text-3xl font-bold text-gray-800 dark:text-white mb-2">Historical Timeline</h2>
+                <p class="text-gray-700 dark:text-gray-300">Tracing the rich history of Angkor Wat and the Khmer Empire</p>
             </div>
             <div class="timeline-container py-8">
                 <div class="timeline-line"></div>
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
-                    <div class="timeline-content bg-lsurface dark:bg-dsurface shadow-md rounded-lg">
-                        <h3 class="text-xl font-bold text-ltext-h dark:text-dtext-h mb-2">802 CE</h3>
-                        <p class="text-ltext-m dark:text-dtext-m">King Jayavarman II establishes the Khmer Empire and declares himself a "universal monarch" (chakravartin).</p>
+                    <div class="timeline-content bg-white dark:bg-gray-800 shadow-md rounded-lg">
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">802 CE</h3>
+                        <p class="text-gray-700 dark:text-gray-300">King Jayavarman II establishes the Khmer Empire and declares himself a "universal monarch" (chakravartin).</p>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
-                    <div class="timeline-content bg-lsurface dark:bg-dsurface shadow-md rounded-lg">
-                        <h3 class="text-xl font-bold text-ltext-h dark:text-dtext-h mb-2">1113-1150 CE</h3>
-                        <p class="text-ltext-m dark:text-dtext-m">Reign of King Suryavarman II, who commissions the construction of Angkor Wat as his state temple and eventual mausoleum.</p>
+                    <div class="timeline-content bg-white dark:bg-gray-800 shadow-md rounded-lg">
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">1113-1150 CE</h3>
+                        <p class="text-gray-700 dark:text-gray-300">Reign of King Suryavarman II, who commissions the construction of Angkor Wat as his state temple and eventual mausoleum.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
-                    <div class="timeline-content bg-lsurface dark:bg-dsurface shadow-md rounded-lg">
-                        <h3 class="text-xl font-bold text-ltext-h dark:text-dtext-h mb-2">1177 CE</h3>
-                        <p class="text-ltext-m dark:text-dtext-m">Angkor is attacked and sacked by the Chams (from present-day Vietnam), a traditional enemy of the Khmer.</p>
+                    <div class="timeline-content bg-white dark:bg-gray-800 shadow-md rounded-lg">
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">1177 CE</h3>
+                        <p class="text-gray-700 dark:text-gray-300">Angkor is attacked and sacked by the Chams (from present-day Vietnam), a traditional enemy of the Khmer.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
-                    <div class="timeline-content bg-lsurface dark:bg-dsurface shadow-md rounded-lg">
-                        <h3 class="text-xl font-bold text-ltext-h dark:text-dtext-h mb-2">1181-1219 CE</h3>
-                        <p class="text-ltext-m dark:text-dtext-m">Reign of Jayavarman VII, who builds Angkor Thom, Bayon, and numerous other temples and structures in the Angkor complex.</p>
+                    <div class="timeline-content bg-white dark:bg-gray-800 shadow-md rounded-lg">
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">1181-1219 CE</h3>
+                        <p class="text-gray-700 dark:text-gray-300">Reign of Jayavarman VII, who builds Angkor Thom, Bayon, and numerous other temples and structures in the Angkor complex.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
-                    <div class="timeline-content bg-lsurface dark:bg-dsurface shadow-md rounded-lg">
-                        <h3 class="text-xl font-bold text-ltext-h dark:text-dtext-h mb-2">13th-14th Century</h3>
-                        <p class="text-ltext-m dark:text-dtext-m">Gradual transformation of Angkor Wat from a Hindu temple to a Buddhist temple as Buddhism becomes the dominant religion in the kingdom.</p>
+                    <div class="timeline-content bg-white dark:bg-gray-800 shadow-md rounded-lg">
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">13th-14th Century</h3>
+                        <p class="text-gray-700 dark:text-gray-300">Gradual transformation of Angkor Wat from a Hindu temple to a Buddhist temple as Buddhism becomes the dominant religion in the kingdom.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
-                    <div class="timeline-content bg-lsurface dark:bg-dsurface shadow-md rounded-lg">
-                        <h3 class="text-xl font-bold text-ltext-h dark:text-dtext-h mb-2">15th Century</h3>
-                        <p class="text-ltext-m dark:text-dtext-m">Angkor is gradually abandoned as the Khmer capital shifts to Phnom Penh. Angkor Wat, however, remains an important Buddhist center.</p>
+                    <div class="timeline-content bg-white dark:bg-gray-800 shadow-md rounded-lg">
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">15th Century</h3>
+                        <p class="text-gray-700 dark:text-gray-300">Angkor is gradually abandoned as the Khmer capital shifts to Phnom Penh. Angkor Wat, however, remains an important Buddhist center.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
-                    <div class="timeline-content bg-lsurface dark:bg-dsurface shadow-md rounded-lg">
-                        <h3 class="text-xl font-bold text-ltext-h dark:text-dtext-h mb-2">1860s</h3>
-                        <p class="text-ltext-m dark:text-dtext-m">Rediscovery of Angkor by French naturalist Henri Mouhot, bringing the site to Western attention.</p>
+                    <div class="timeline-content bg-white dark:bg-gray-800 shadow-md rounded-lg">
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">1860s</h3>
+                        <p class="text-gray-700 dark:text-gray-300">Rediscovery of Angkor by French naturalist Henri Mouhot, bringing the site to Western attention.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
-                    <div class="timeline-content bg-lsurface dark:bg-dsurface shadow-md rounded-lg">
-                        <h3 class="text-xl font-bold text-ltext-h dark:text-dtext-h mb-2">1992</h3>
-                        <p class="text-ltext-m dark:text-dtext-m">Angkor Archaeological Park is listed as a UNESCO World Heritage Site.</p>
+                    <div class="timeline-content bg-white dark:bg-gray-800 shadow-md rounded-lg">
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">1992</h3>
+                        <p class="text-gray-700 dark:text-gray-300">Angkor Archaeological Park is listed as a UNESCO World Heritage Site.</p>
                     </div>
                 </div>
             </div>
@@ -458,11 +452,11 @@
     </section>
 
     <!-- Photo Gallery -->
-    <section class="bg-lsurface dark:bg-dsurface py-16 px-4">
+    <section class="bg-gray-100 dark:bg-gray-800 py-16 px-4">
         <div class="container mx-auto">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-ltext-h dark:text-dtext-h mb-2">Photo Gallery</h2>
-                <p class="text-ltext-m dark:text-dtext-m">Glimpses of Siem Reap and Angkor's breathtaking beauty</p>
+                <h2 class="text-3xl font-bold text-gray-800 dark:text-white mb-2">Photo Gallery</h2>
+                <p class="text-gray-700 dark:text-gray-300">Glimpses of Siem Reap and Angkor's breathtaking beauty</p>
             </div>
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 <div class="gallery-img rounded-lg overflow-hidden shadow-md">
@@ -491,7 +485,7 @@
                 </div>
             </div>
             <div class="text-center mt-10">
-                <button class="bg-lsecondary dark:bg-dsecondary text-white font-medium px-8 py-3 rounded-full hover:bg-opacity-90 transition duration-300">
+                <button class="bg-indigo-600 dark:bg-orange-500 text-white font-medium px-8 py-3 rounded-full hover:bg-indigo-700 dark:hover:bg-orange-600 transition duration-300">
                     View Full Gallery
                 </button>
             </div>
@@ -502,75 +496,75 @@
     <section class="py-16 px-4">
         <div class="container mx-auto">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-ltext-h dark:text-dtext-h mb-2">Practical Information</h2>
-                <p class="text-ltext-m dark:text-dtext-m">Everything you need to plan your visit to Siem Reap and Angkor Wat</p>
+                <h2 class="text-3xl font-bold text-gray-800 dark:text-white mb-2">Practical Information</h2>
+                <p class="text-gray-700 dark:text-gray-300">Everything you need to plan your visit to Siem Reap and Angkor Wat</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white dark:bg-dsurface rounded-lg shadow-md p-6 card">
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 card">
                     <div class="flex items-center mb-4">
-                        <span class="bg-lsecondary dark:bg-dsecondary text-white p-2 rounded-full mr-3"><i class="fas fa-ticket-alt"></i></span>
-                        <h3 class="text-xl font-bold text-ltext-h dark:text-dtext-h">Tickets & Passes</h3>
+                        <span class="bg-indigo-600 dark:bg-orange-500 text-white p-2 rounded-full mr-3"><i class="fas fa-ticket-alt"></i></span>
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white">Tickets & Passes</h3>
                     </div>
-                    <p class="text-ltext-m dark:text-dtext-m mb-4">Angkor Archaeological Park offers 1-day ($37), 3-day ($62), and 7-day ($72) passes. Purchase at the official ticket counter or online.</p>
-                    <a href="#" class="text-laccent dark:text-daccent hover:underline font-medium">Buy Tickets →</a>
+                    <p class="text-gray-700 dark:text-gray-300 mb-4">Angkor Archaeological Park offers 1-day ($37), 3-day ($62), and 7-day ($72) passes. Purchase at the official ticket counter or online.</p>
+                    <a href="#" class="text-indigo-600 dark:text-orange-400 hover:underline font-medium">Buy Tickets →</a>
                 </div>
-                <div class="bg-white dark:bg-dsurface rounded-lg shadow-md p-6 card">
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 card">
                     <div class="flex items-center mb-4">
-                        <span class="bg-lsecondary dark:bg-dsecondary text-white p-2 rounded-full mr-3"><i class="fas fa-tshirt"></i></span>
-                        <h3 class="text-xl font-bold text-ltext-h dark:text-dtext-h">Dress Code</h3>
+                        <span class="bg-indigo-600 dark:bg-orange-500 text-white p-2 rounded-full mr-3"><i class="fas fa-tshirt"></i></span>
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white">Dress Code</h3>
                     </div>
-                    <p class="text-ltext-m dark:text-dtext-m mb-4">Dress respectfully: cover shoulders and knees. Comfortable shoes are recommended for walking and climbing temple steps.</p>
-                    <a href="#" class="text-laccent dark:text-daccent hover:underline font-medium">Learn More →</a>
+                    <p class="text-gray-700 dark:text-gray-300 mb-4">Dress respectfully: cover shoulders and knees. Comfortable shoes are recommended for walking and climbing temple steps.</p>
+                    <a href="#" class="text-indigo-600 dark:text-orange-400 hover:underline font-medium">Learn More →</a>
                 </div>
-                <div class="bg-white dark:bg-dsurface rounded-lg shadow-md p-6 card">
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 card">
                     <div class="flex items-center mb-4">
-                        <span class="bg-lsecondary dark:bg-dsecondary text-white p-2 rounded-full mr-3"><i class="fas fa-car"></i></span>
-                        <h3 class="text-xl font-bold text-ltext-h dark:text-dtext-h">Getting There</h3>
+                        <span class="bg-indigo-600 dark:bg-orange-500 text-white p-2 rounded-full mr-3"><i class="fas fa-car"></i></span>
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white">Getting There</h3>
                     </div>
-                    <p class="text-ltext-m dark:text-dtext-m mb-4">Siem Reap is 7 km from Angkor Wat. Travel by tuk-tuk ($15-20/day), taxi, or guided tour. Bikes are also popular for short distances.</p>
-                    <a href="#" class="text-laccent dark:text-daccent hover:underline font-medium">View Options →</a>
+                    <p class="text-gray-700 dark:text-gray-300 mb-4">Siem Reap is 7 km from Angkor Wat. Travel by tuk-tuk ($15-20/day), taxi, or guided tour. Bikes are also popular for short distances.</p>
+                    <a href="#" class="text-indigo-600 dark:text-orange-400 hover:underline font-medium">View Options →</a>
                 </div>
-                <div class="bg-white dark:bg-dsurface rounded-lg shadow-md p-6 card">
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 card">
                     <div class="flex items-center mb-4">
-                        <span class="bg-lsecondary dark:bg-dsecondary text-white p-2 rounded-full mr-3"><i class="fas fa-sun"></i></span>
-                        <h3 class="text-xl font-bold text-ltext-h dark:text-dtext-h">Best Times</h3>
+                        <span class="bg-indigo-600 dark:bg-orange-500 text-white p-2 rounded-full mr-3"><i class="fas fa-sun"></i></span>
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white">Best Times</h3>
                     </div>
-                    <p class="text-ltext-m dark:text-dtext-m mb-4">Visit during the dry season (November-February) for cooler weather. Sunrise and late afternoon offer the best light and fewer crowds.</p>
-                    <a href="#" class="text-laccent dark:text-daccent hover:underline font-medium">Plan Your Visit →</a>
+                    <p class="text-gray-700 dark:text-gray-300 mb-4">Visit during the dry season (November-February) for cooler weather. Sunrise and late afternoon offer the best light and fewer crowds.</p>
+                    <a href="#" class="text-indigo-600 dark:text-orange-400 hover:underline font-medium">Plan Your Visit →</a>
                 </div>
-                <div class="bg-white dark:bg-dsurface rounded-lg shadow-md p-6 card">
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 card">
                     <div class="flex items-center mb-4">
-                        <span class="bg-lsecondary dark:bg-dsecondary text-white p-2 rounded-full mr-3"><i class="fas fa-camera"></i></span>
-                        <h3 class="text-xl font-bold text-ltext-h dark:text-dtext-h">Photography Tips</h3>
+                        <span class="bg-indigo-600 dark:bg-orange-500 text-white p-2 rounded-full mr-3"><i class="fas fa-camera"></i></span>
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white">Photography Tips</h3>
                     </div>
-                    <p class="text-ltext-m dark:text-dtext-m mb-4">Bring a tripod for sunrise shots. Respect restricted areas and avoid flash photography inside temples to preserve artifacts.</p>
-                    <a href="#" class="text-laccent dark:text-daccent hover:underline font-medium">Learn More →</a>
+                    <p class="text-gray-700 dark:text-gray-300 mb-4">Bring a tripod for sunrise shots. Respect restricted areas and avoid flash photography inside temples to preserve artifacts.</p>
+                    <a href="#" class="text-indigo-600 dark:text-orange-400 hover:underline font-medium">Learn More →</a>
                 </div>
-                <div class="bg-white dark:bg-dsurface rounded-lg shadow-md p-6 card">
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 card">
                     <div class="flex items-center mb-4">
-                        <span class="bg-lsecondary dark:bg-dsecondary text-white p-2 rounded-full mr-3"><i class="fas fa-utensils"></i></span>
-                        <h3 class="text-xl font-bold text-ltext-h dark:text-dtext-h">Dining Nearby</h3>
+                        <span class="bg-indigo-600 dark:bg-orange-500 text-white p-2 rounded-full mr-3"><i class="fas fa-utensils"></i></span>
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white">Dining Nearby</h3>
                     </div>
-                    <p class="text-ltext-m dark:text-dtext-m mb-4">Enjoy Khmer cuisine at local restaurants in Siem Reap or near the temples. Try dishes like Amok and Lok Lak.</p>
-                    <a href="#" class="text-laccent dark:text-daccent hover:underline font-medium">Explore Dining →</a>
+                    <p class="text-gray-700 dark:text-gray-300 mb-4">Enjoy Khmer cuisine at local restaurants in Siem Reap or near the temples. Try dishes like Amok and Lok Lak.</p>
+                    <a href="#" class="text-indigo-600 dark:text-orange-400 hover:underline font-medium">Explore Dining →</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Call to Action -->
-    <section class="bg-lprimary dark:bg-dprimary py-16 px-4">
+    <section class="bg-blue-300 dark:bg-gray-800 py-16 px-4">
         <div class="container mx-auto text-center">
             <h2 class="text-3xl font-bold text-white mb-4">Ready to Explore Siem Reap?</h2>
             <p class="text-white mb-8">Book your adventure to Siem Reap and Angkor Wat today!</p>
-            <button class="px-8 py-3 bg-lsecondary dark:bg-dsecondary text-white font-medium rounded-full hover:bg-opacity-90 transition duration-300">
+            <button class="px-8 py-3 bg-indigo-600 dark:bg-orange-500 text-white font-medium rounded-full hover:bg-indigo-700 dark:hover:bg-orange-600 transition duration-300">
                 Start Planning Your Trip
             </button>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-lprimary dark:bg-dprimary text-ltext-h dark:text-dtext-h pt-12 px-6 md:px-12 lg:px-16 xl:px-28 2xl:px-32">
+    <footer class="bg-[#161e3b] text-white pt-12 px-6 md:px-12 lg:px-16 xl:px-28 2xl:px-32">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 2xl:grid-cols-4 gap-10 lg:gap-4 pb-10">
             <!-- Logo + Description -->
             <div>
@@ -581,25 +575,25 @@
                         <p class="text-sm">Explore World</p>
                     </div>
                 </div>
-                <p class="text-sm text-ltext-m dark:text-dtext-m mb-4">
+                <p class="text-sm text-gray-300 mb-4">
                     Explore unforgettable journeys through ancient wonders and stunning landscapes with our expertly crafted tours.
                 </p>
                 <div class="flex space-x-3">
-                    <a href="#" class="bg-white p-2 px-3.5 rounded-full hover:bg-[#1877F2]"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="bg-white p-2 px-3.5 rounded-full hover:bg-[#000000]"><i class="fa-brands fa-x-twitter"></i></a>
-                    <a href="#" class="bg-white p-2 px-3.5 rounded-full hover:bg-[#0077B5]"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" class="bg-white p-2 px-3.5 rounded-full hover:bg-[#25D366]"><i class="fab fa-whatsapp"></i></a>
-                    <a href="#" class="bg-white p-2 px-3.5 rounded-full hover:bg-gradient-to-r from-[#833ab4] via-[#fd1d1d] to-[#fcb045]"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="bg-gray-600 p-2 px-3.5 rounded-full hover:bg-[#1877F2]"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="bg-gray-600 p-2 px-3.5 rounded-full hover:bg-[#000000]"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" class="bg-gray-600 p-2 px-3.5 rounded-full hover:bg-[#0077B5]"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="bg-gray-600 p-2 px-3.5 rounded-full hover:bg-[#25D366]"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" class="bg-gray-600 p-2 px-3.5 rounded-full hover:bg-gradient-to-r from-[#833ab4] via-[#fd1d1d] to-[#fcb045]"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
             <!-- Quick Links -->
             <div>
                 <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
                 <ul class="space-y-2 text-sm">
-                    <li><a href="#" class="hover:text-laccent dark:hover:text-daccent hover:underline">› Home</a></li>
-                    <li><a href="#" class="hover:text-laccent dark:hover:text-daccent hover:underline">› Destination</a></li>
-                    <li><a href="#" class="hover:text-laccent dark:hover:text-daccent hover:underline">› About Us</a></li>
-                    <li><a href="#" class="hover:text-laccent dark:hover:text-daccent hover:underline">› Contact Us</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white hover:underline">› Home</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white hover:underline">› Destination</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white hover:underline">› About Us</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white hover:underline">› Contact Us</a></li>
                 </ul>
             </div>
             <!-- Contact Info -->
@@ -607,7 +601,7 @@
                 <h3 class="text-lg font-semibold mb-4">Contact</h3>
                 <ul class="space-y-4 text-sm">
                     <li class="flex items-start gap-3">
-                        <div class="bg-white p-2 px-3.5 rounded-full">
+                        <div class="bg-gray-600 p-2 px-3.5 rounded-full">
                             <i class="fas fa-phone-alt"></i>
                         </div>
                         <div>
@@ -617,7 +611,7 @@
                     </li>
                     <h3 class="text-lg font-semibold mb-4">Address</h3>
                     <li class="flex items-start gap-3">
-                        <div class="bg-white p-2 px-3.5 rounded-full">
+                        <div class="bg-gray-600 p-2 px-3.5 rounded-full">
                             <i class="fas fa-envelope"></i>
                         </div>
                         <div>
@@ -626,7 +620,7 @@
                         </div>
                     </li>
                     <li class="flex items-start gap-3">
-                        <div class="bg-white p-2 px-3.5 rounded-full">
+                        <div class="bg-gray-600 p-2 px-3.5 rounded-full">
                             <i class="fas fa-map-marker-alt"></i>
                         </div>
                         <div>
@@ -679,15 +673,68 @@
             </div>
         </div>
         <!-- Bottom Bar -->
-        <div class="border-t border-ltext-m dark:border-dtext-m mt-6 py-4 flex flex-col md:flex-row justify-center items-center text-sm px-4">
+        <div class="border-t border-gray-700 mt-6 py-4 flex flex-col md:flex-row justify-center items-center text-sm px-4">
             <p>Copyright 2025 Tourism. All Rights Reserved.</p>
             <!-- Go to Top -->
-            <a href="#top" target="_top" class="fixed bottom-6 right-6 bg-lsecondary dark:bg-dsecondary text-white rounded-full p-2 px-3.5 shadow-lg hover:bg-laccent dark:hover:bg-daccent">
+            <a href="#top" target="_top" class="fixed bottom-6 right-6 bg-indigo-600 dark:bg-orange-500 text-white rounded-full p-2 px-3.5 shadow-lg hover:bg-indigo-700 dark:hover:bg-orange-600">
                 <i class="fas fa-arrow-up"></i>
             </a>
         </div>
     </footer>
 
-   
+    <script>
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Dark Mode Toggle
+        const button = document.getElementById("theme-toggle");
+        const icon = document.getElementById("theme-icon");
+
+        const initTheme = () => {
+            if (
+                localStorage.theme === "dark" ||
+                (!localStorage.theme &&
+                    window.matchMedia("(prefers-color-scheme: dark)").matches)
+            ) {
+                document.documentElement.classList.add("dark");
+                updateButton("dark");
+            } else {
+                document.documentElement.classList.remove("dark");
+                updateButton("light");
+            }
+        };
+
+        const updateButton = (theme) => {
+            if (theme === "dark") {
+                icon.innerHTML =
+                    '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>';
+            } else {
+                icon.innerHTML = `
+                    <circle cx="12" cy="12" r="4"/>
+                    <path d="M12 2v2"/>
+                    <path d="M12 20v2"/>
+                    <path d="m4.93 4.93 1.41 1.41"/>
+                    <path d="m17.66 17.66 1.41 1.41"/>
+                    <path d="M2 12h2"/>
+                    <path d="M20 12h2"/>
+                    <path d="m6.34 17.66-1.41 1.41"/>
+                    <path d="m19.07 4.93-1.41 1.41"/>
+                `;
+            }
+        };
+
+        button.addEventListener("click", () => {
+            const isDark = document.documentElement.classList.toggle("dark");
+            localStorage.theme = isDark ? "dark" : "light";
+            updateButton(isDark ? "dark" : "light");
+        });
+
+        initTheme();
+    </script>
 </body>
 </html>
