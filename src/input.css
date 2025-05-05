@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&display=swap');
 @import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 
 @custom-variant dark (&:where(.dark, .dark *));
@@ -29,3 +32,66 @@
 
 
 }
+:root {
+    --primary: #D6C1A4;
+    --secondary: #C9A14A;
+    --accent: #8B5E3C;
+    --background: #FAF8F2;
+    --surface: #EEEAE2;
+    --text-main: #333333;
+    --text-heading: #1A1A1A;
+}
+.carousel-track {
+    transform: translateX(0);
+    transition: transform 0.5s ease-out;
+}
+.carousel-item {
+    transition: transform 0.5s ease-out;
+}
+.pagination-dot {
+    height: 10px;
+    width: 10px;
+    background-color: var(--primary);
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.pagination-dot.active {
+    background-color: var(--accent);
+}
+
+/* feed-back */
+
+.testimonial-slider {
+    overflow: hidden;
+    position: relative;
+}
+.slide-track {
+    display: flex;
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    width: 100%;
+    justify-content: center;
+}
+.testimonial-card {
+    transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+    width: calc(33.33% - 2rem);
+    opacity: 0.8;
+    transform: scale(0.95);
+}
+.testimonial-card.active {
+    transform: translateY(-20px) scale(1);
+    opacity: 1;
+    box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+.rating-stars {
+    color: #FFD700;
+}
+.quote-icon {
+    color: #C9A14A;
+    opacity: 0.5;
+}
+
+/* C2 */
+
