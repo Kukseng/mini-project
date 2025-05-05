@@ -1,297 +1,1339 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<!doctype html>
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="src/output.css" />
-  <link rel="shortcut icon" href="./Asset/logoHaveBg.PNG" type="image/x-icon" />
-  <title>Tourism</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./src/output.css" rel="stylesheet">
+  <link rel="stylesheet" href="./src/input.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.10.3/cdn.min.js" defer></script>
+  <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+  <style>
+    .scrollbar-hide::-webkit-scrollbar {
+      display: none;
+    }
+    .scrollbar-hide {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    #carousel {
+      scroll-behavior: smooth; /* Smooth effect */
+    }
+  </style>
 </head>
-
-<body class="bg-white transition-colors duration-500" id="top">
-  <header
-    class="navbar-fixed bg-blue-300 flex justify-between items-center px-6 md:px-9 lg:px-16 xl:px-28 2xl:px-32 h-[96px] xl:h-[107px] 2xl:h-[115px] relative z-50 shadow-md">
-    <div>
-      <img src="./Asset/logoNoBg.png" class="w-28 2xl:w-36 xl:w-32 Turnsoutobject-contain" alt="logo" />
-    </div>
-    <nav>
-      <ul class="hidden md:flex space-x-8 text-white font-semibold">
-        <li class="group relative">
-          <a href="./index.html" class="">Home</a>
-          <span
-            class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-full"></span>
-        </li>
-        <li class="group relative">
-          <a href="./destination.html">Destination</a>
-          <span
-            class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-full"></span>
-        </li>
-        <li class="group relative">
-          <a href="./aboutUs.html">About Us</a>
-          <span
-            class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-full"></span>
-        </li>
-        <li class="group relative">
-          <a href="./contact.html">Contact Us</a>
-          <span
-            class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-full"></span>
-        </li>
-      </ul>
-    </nav>
-    <div class="flex items-center space-x-4">
-      <!-- Dark Mode Toggle -->
-      <button id="theme-toggle"
-        class="flex items-center gap-2 px-4 py-2 bg-gray-200 dark:bg-gray-600 text-gray-800 dark:text-white rounded-full hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors">
-        <svg id="theme-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z">
-          </path>
-        </svg>
-      </button>
-      <!-- Mobile Menu Button -->
-      <button id="menu-toggle" class="md:hidden text-white text-2xl">
-        <i class="fas fa-bars"></i>
-      </button>
-    </div>
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden md:hidden bg-blue-300 w-full absolute top-full left-0 px-6 py-4 shadow-md">
-      <ul class="space-y-4 text-white font-semibold">
-        <li class="group relative my-2">
-          <a href="#index" class="text-lg font-semibold">Home</a><span
-            class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-12"></span>
-        </li>
-        <li class="group relative my-2">
-          <a href="./destination.html" class="text-lg font-semibold">Destination</a>
-          <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-24"></span>
-        </li>
-        <li class="group relative my-2">
-          <a href="./aboutUs.html" class="text-lg font-semibold">About Us</a>
-          <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-20"></span>
-        </li>
-        <li class="group relative my-2">
-          <a href="./contact.html" class="text-lg font-semibold">Contact Us</a>
-          <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-23"></span>
-        </li>
-      </ul>
-      <button
-        class="w-full mt-4 px-4 py-2 bg-indigo-600 dark:bg-orange-500 text-white font-medium rounded-full hover:bg-indigo-700 dark:hover:bg-orange-600 transition duration-300">
-        Book Now
-      </button>
-    </div>
-  </header>
-
-  <main class="mt-80"></main>
+<body>
+  <main class="mt-25">
+    <!-- Hero Section -->
+    <section class="relative h-[500px] bg-cover bg-center" style="background-image: url(https://www.remotelands.com/travelogues/app/uploads/2019/09/Angkor-Wat-1.jpg);">
+      <div class="absolute inset-0 bg-opacity-60 flex flex-col justify-center items-center text-center text-white px-4">
+        <div></div>
+        <h1 class="text-5xl font-bold fade-in-up">Welcome to Angkor Wat</h1>
+        <p class="text-xl mt-4 fade-in-up" style="animation-delay: .3s">Explore the wonders of Cambodia's most sacred treasure</p>
+        <a href="#temples" class="mt-6 bg-[--color-orange-500] hover:bg-[--color-orange-600] text-white px-6 py-3 rounded transition fade-in-up" style="animation-delay: .6s">Discover More</a>
+      </div>
+    </section>
   
-  <!-- Footer -->
-  <footer class="bg-[#161e3b] text-white pt-12  px-6 md:px-12  lg:px-16 xl:px-28 2xl:px-32">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 2xl:grid-cols-4 gap-10 lg:gap-4 pb-10">
+   
+    <!-- Top Destinations -->
+    <section class="px-4 py-10 max-w-6xl mx-auto ">
+      <h2 class="text-3xl font-bold text-[--color-indigo-700] mb-6">Top Temples in Siem Reap</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div class="rounded-lg overflow-hidden shadow hover:scale-105 transition-transform">
+          <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXeQ5-XGLhqCIBS7OB3KrGKgJ3v2p2r2Q2NRRrv_Tab8hllCtlxoGGDqLdkWd3rG8jhqWWadanmWjuK-eWE_-jqqCGZY6qA74hvp9dq093hyMFr1oO5BAJO0ftYPCOkq0_aQe7M3lA?key=r3ZKxBHcz-370hdrCiAq81oV">
+          <p class="mt-2 text-center font-medium">Angkor Wat</p>
+        </div>
+        <div class="rounded-lg overflow-hidden shadow hover:scale-105 transition-transform">
+          <img src="https://media.istockphoto.com/id/1131162453/photo/faces-of-bayon-temple-angkor-cambodia.jpg?s=612x612&w=0&k=20&c=UuMqdney7XU4cwbtZ3IBKpwTASOn25-rLAcVBHojD7o=" alt="Bayon">
+          <p class="mt-2 text-center font-medium">Bayon Temple</p>
+        </div>
+        <div class="rounded-lg overflow-hidden shadow hover:scale-105 transition-transform">
+          <img src="https://media.istockphoto.com/id/1145788108/photo/ta-prohm-angkor-wat-siem-reap-temple-cambodia.jpg?s=612x612&w=0&k=20&c=6b9AH6INkk3YTtuUn_taxo5yYNfPrxoSetCBk_APdyA=" alt="Ta Prohm">
+          <p class="mt-2 text-center font-medium">Ta Prohm</p>
+        </div>
+        <div class="rounded-lg overflow-hidden shadow hover:scale-105 transition-transform">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRH6XEA9NtUrMbj-HRLtGPYV5-ezLgYT6gZYxLzjPJKJkiBncS0qOGBNOnJS5_wGhw-6Q8&usqp=CAU">
+          <p class="mt-2 text-center font-medium">Banteay Srei</p>
+        </div>
+        <div class="rounded-lg overflow-hidden shadow hover:scale-105 transition-transform">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Preah_Khan%2C_Angkor%2C_Camboya%2C_2013-08-17%2C_DD_26.JPG/1200px-Preah_Khan%2C_Angkor%2C_Camboya%2C_2013-08-17%2C_DD_26.JPG" alt="Preah Khan">
+          <p class="mt-2 text-center font-medium">Preah Khan</p>
+        </div>
+        <div class="rounded-lg overflow-hidden shadow hover:scale-105 transition-transform">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQyJqJefXTkQHCoYVjokK9rFJnsLATUNrdrg&s" alt="Ta Keo">
+          <p class="mt-2 text-center font-medium">Ta Keo</p>
+        </div>
+        <div class="rounded-lg overflow-hidden shadow hover:scale-105 transition-transform">
+          <img src="https://www.angkor-temples-in-cambodia.com/uploads/3/0/0/4/30047791/banteay-kdei-01-600_orig.jpg" alt="Ta Keo">
+          <p class="mt-2 text-center font-medium">Banteay Kdei</p>
+        </div>
+        <div class="rounded-lg overflow-hidden shadow hover:scale-105 transition-transform">
+          <img src="https://www.angkor-temples-in-cambodia.com/uploads/3/0/0/4/30047791/pre-rup-02-600_orig.jpg" alt="Ta Keo">
+          <p class="mt-2 text-center font-medium">Pre Rup</p>
+        </div>
+        </div>
+      </div>
+    </section>
 
-      <!-- Logo + Description -->
-      <div>
-        <div class="flex items-center space-x-3 mb-4">
-          <img src="./Asset/logoHaveBg.PNG" alt="logo" class="w-30 h-30 rounded-full" />
-          <div>
-            <h2 class="text-xl font-bold">Tourism</h2>
-            <p class="text-sm">Explore World</p>
+
+  <!-- Latest Stories -->
+  <section class="bg-[--color-gray-200] px-4 py-10">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-2xl font-bold mb-6">Latest Stories</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-white p-4 rounded shadow hover:shadow-lg transition-shadow">
+          <img src="https://www.siemreap.net/wp-content/uploads/2019/02/Equinox-at-Angkor-Wat.jpg" class="rounded mb-3">
+          <h3 class="text-lg font-semibold">The best view at Angkor</h3>
+          <p class="text-sm text-[--color-gray-600]">Explore unique Cambodian dishes you can try near the temples.</p>
+        </div>
+        <div class="bg-white p-4 rounded shadow hover:shadow-lg transition-shadow">
+          <img src="https://tripates.com/media/bangkok-to-siem-reap-best-ways-to-get-there-air.jpg" class="rounded mb-3">
+          <h3 class="text-lg font-semibold">The History Behind Angkor Wat</h3>
+          <p class="text-sm text-[--color-gray-600]">Unveil the sacred history of Cambodia's most iconic site.</p>
+        </div>
+        <div class="bg-white p-4 rounded shadow hover:shadow-lg transition-shadow">
+          <img src="https://helloangkor.com/wp-content/uploads/2024/11/HA5D6310-Enhanced-NR-1024x683.jpg" class="rounded mb-3">
+          <h3 class="text-lg font-semibold">Best Time to Visit</h3>
+          <p class="text-sm text-[--color-gray-600]">Catch the perfect sunrise moments at ancient temples.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Traveler's Highlights -->
+  <section class="px-4 py-10 max-w-7xl mx-auto">
+    <h2 class="text-2xl font-bold mb-6">Traveler's Highlights</h2>
+    <div class="flex flex-col md:flex-row gap-6">
+      <div class="flex-1">
+        <img src="https://imvoyager.com/wp-content/uploads/2020/05/Siem-Reap-Temples-%E2%80%93-Must-See-Temples-in-Siem-Reap-Cambodia.jpg" class="rounded shadow hover:scale-105 transition-transform">
+      </div>
+      <div class="flex-1">
+        <p class="text-[--color-gray-700]">“Exploring the temple ruins in Siem Reap was like walking through a living museum. Every corner tells a story.”</p>
+        <p class="mt-2 font-medium">— Liam, Photographer</p>
+      </div>
+    </div>
+  </section>
+  </main>
+  
+  <header
+        class="navbar-fixed bg-blue-300 flex justify-between items-center px-6 md:px-9 lg:px-16 xl:px-28 2xl:px-32 h-[96px] xl:h-[107px] 2xl:h-[115px] relative z-50 shadow-md">
+        <div>
+            <img src="./Asset/logoNoBg.png" class="w-28 2xl:w-36 xl:w-32 Turnsoutobject-contain" alt="logo" />
+        </div>
+        <nav>
+            <ul class="hidden md:flex space-x-8 text-white font-semibold">
+                <li class="group relative">
+                    <a href="./index.html" class="">Home</a>
+                    <span
+                        class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-full"></span>
+                </li>
+                <li class="group relative">
+                    <a href="./destination.html">Destination</a>
+                    <span
+                        class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-full"></span>
+                </li>
+                <li class="group relative">
+                    <a href="./aboutUs.html">About Us</a>
+                    <span
+                        class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-full"></span>
+                </li>
+                <li class="group relative">
+                    <a href="./contact.html">Contact Us</a>
+                    <span
+                        class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-full"></span>
+                </li>
+            </ul>
+        </nav>
+        <div class="flex items-center space-x-4">
+            <!-- Dark Mode Toggle -->
+            <button id="theme-toggle"
+                class="flex items-center gap-2 px-4 py-2 bg-gray-200 dark:bg-gray-600 text-gray-800 dark:text-white rounded-full hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors">
+                <svg id="theme-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+                </svg>
+            </button>
+            <!-- Mobile Menu Button -->
+            <button id="menu-toggle" class="md:hidden text-white text-2xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-blue-300 w-full absolute top-full left-0 px-6 py-4 shadow-md">
+            <ul class="space-y-4 text-white font-semibold">
+                <li class="group relative my-2">
+                    <a href="./index.html" class="text-lg font-semibold">Home</a><span
+                        class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-12"></span>
+                </li>
+                <li class="group relative my-2">
+                    <a href="#destination" class="text-lg font-semibold">Destination</a>
+                    <span
+                        class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-24"></span>
+                </li>
+                <li class="group relative my-2">
+                    <a href="" class="text-lg font-semibold">About Us</a>
+                    <span
+                        class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-20"></span>
+                </li>
+                <li class="group relative my-2">
+                    <a href="./contact.html" class="text-lg font-semibold">Contact Us</a>
+                    <span
+                        class="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-23"></span>
+                </li>
+            </ul>
+            <button
+                class="w-full mt-4 px-4 py-2 bg-indigo-600 dark:bg-orange-500 text-white font-medium rounded-full hover:bg-indigo-700 dark:hover:bg-orange-600 transition duration-300">
+                Book Now
+            </button>
+        </div>
+    </header>
+
+
+<!-- carousel1 -->
+  <section >
+    <div class="container mx-auto px-4 py-12">
+      <div class="text-center mb-10">
+          <h3 class="text-2xl italic" style="color: #8B5E3C;">Wonderful Place For You</h3>
+          <h2 class="text-4xl text-[#1A1A1A] font-bold mt-2 dark:text-orange-400 " >Tour Categories</h2>
+      </div>
+
+      <div class="relative overflow-hidden w-full">
+          <!-- Left Arrow -->
+          <button 
+              id="left-arrow" 
+              class="absolute left-0 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full shadow-lg flex items-center justify-center transition-all duration-300 focus:outline-none"
+              style="background-color: rgba(214, 193, 164, 0.8); hover: background-color: #D6C1A4;"
+              aria-label="Previous slide">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" style="color: #8B5E3C;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+              </svg>
+          </button>
+
+          <!-- Cards container with auto-scrolling feature -->
+          <div id="carousel-track" class="flex justify-start transition-transform duration-500 ease-in-out py-8">
+              <!-- First card -->
+              <div class="carousel-item flex-none w-64 mx-4 transform transition-all duration-500 ease-in-out">
+                  <div class="overflow-hidden rounded-xl shadow-lg" style="background-color: #EEEAE2;">
+                      <div class="relative">
+                          <img src="https://i.pinimg.com/736x/aa/5d/ab/aa5dab14884adfd44abd129f89b7fc5f.jpg" alt="Airbirds" class="w-full h-64 object-cover">
+                          <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-20"></div>
+                      </div>
+                  </div>
+                  <div class="mt-4 text-center">
+                      <h3 class="text-xl font-semibold" style="color: #333333;">Ta Phrom</h3>
+                      <p class="text-sm hover:underline" style="color: #C9A14A; cursor: pointer;">See More</p>
+                  </div>
+              </div>
+
+              <!-- Second card -->
+              <div class="carousel-item flex-none w-64 mx-4 transform transition-all duration-500 ease-in-out">
+                  <div class="overflow-hidden rounded-xl shadow-lg">
+                      <div class="relative">
+                          <img src="https://i.pinimg.com/736x/e8/b6/76/e8b6765738575d6ff933a7b429e4e936.jpg" alt="Wildlife" class="w-full h-64 object-cover">
+                          <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-20"></div>
+                      </div>
+                  </div>
+                  <div class="mt-4 text-center">
+                      <h3 class="text-xl font-semibold" style="color: #333333;">Angkor Wat Temple</h3>
+                      <p class="text-sm hover:underline" style="color: #C9A14A; cursor: pointer;">See More</p>
+                  </div>
+              </div>
+
+              <!-- Third card -->
+              <div class="carousel-item flex-none w-64 mx-4 transform transition-all duration-500 ease-in-out">
+                  <div class="overflow-hidden rounded-xl shadow-lg">
+                      <div class="relative">
+                          <img src="https://i.pinimg.com/736x/c2/fd/f0/c2fdf08502df9957dc7c397fd48bd383.jpg" alt="Walking" class="w-full h-64 object-cover">
+                          <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-20"></div>
+                      </div>
+                  </div>
+                  <div class="mt-4 text-center">
+                      <h3 class="text-xl font-semibold" style="color: #333333;">Angkor Wat - Sunrise</h3>
+                      <p class="text-sm hover:underline" style="color: #C9A14A; cursor: pointer;">See More</p>
+                  </div>
+              </div>
+
+              <!-- Fourth card -->
+              <div class="carousel-item flex-none w-64 mx-4 transform transition-all duration-500 ease-in-out">
+                  <div class="overflow-hidden rounded-xl shadow-lg">
+                      <div class="relative">
+                          <img src="https://i.pinimg.com/736x/92/a6/db/92a6dbddefb20a2f339f63896973191d.jpg" alt="Cruises" class="w-full h-64 object-cover">
+                          <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-20"></div>
+                      </div>
+                  </div>
+                  <div class="mt-4 text-center">
+                      <h3 class="text-xl font-semibold" style="color: #333333;">Baksei Chamkrong</h3>
+                      <p class="text-sm hover:underline" style="color: #C9A14A; cursor: pointer;">See More</p>
+                  </div>
+              </div>
+
+              <!-- Fifth card -->
+              <div class="carousel-item flex-none w-64 mx-4 transform transition-all duration-500 ease-in-out">
+                  <div class="overflow-hidden rounded-xl shadow-lg">
+                      <div class="relative">
+                          <img src="https://i.pinimg.com/736x/b7/b1/d3/b7b1d37b43392d9cf7b228f9de0b6e6d.jpg" alt="Hiking" class="w-full h-64 object-cover">
+                          <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-20"></div>
+                      </div>
+                  </div>
+                  <div class="mt-4 text-center">
+                      <h3 class="text-xl font-semibold" style="color: #333333;">Angkor Thom/h3>
+                      <p class="text-sm hover:underline" style="color: #C9A14A; cursor: pointer;">See More</p>
+                  </div>
+              </div>
+              <!-- First card -->
+              <div class="carousel-item flex-none w-64 mx-4 transform transition-all duration-500 ease-in-out">
+                  <div class="overflow-hidden rounded-xl shadow-lg" style="background-color: #EEEAE2;">
+                      <div class="relative">
+                          <img src="https://i.pinimg.com/736x/aa/5d/ab/aa5dab14884adfd44abd129f89b7fc5f.jpg" alt="Airbirds" class="w-full h-64 object-cover">
+                          <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-20"></div>
+                      </div>
+                  </div>
+                  <div class="mt-4 text-center">
+                      <h3 class="text-xl font-semibold" style="color: #333333;">Ta Phrom</h3>
+                      <p class="text-sm hover:underline" style="color: #C9A14A; cursor: pointer;">See More</p>
+                  </div>
+              </div>
+
+              <!-- Second card -->
+              <div class="carousel-item flex-none w-64 mx-4 transform transition-all duration-500 ease-in-out">
+                  <div class="overflow-hidden rounded-xl shadow-lg">
+                      <div class="relative">
+                          <img src="https://i.pinimg.com/736x/e8/b6/76/e8b6765738575d6ff933a7b429e4e936.jpg" alt="Wildlife" class="w-full h-64 object-cover">
+                          <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-20"></div>
+                      </div>
+                  </div>
+                  <div class="mt-4 text-center">
+                      <h3 class="text-xl font-semibold" style="color: #333333;">Angkor Wat Temple</h3>
+                      <p class="text-sm hover:underline" style="color: #C9A14A; cursor: pointer;">See More</p>
+                  </div>
+              </div>
+
+              <!-- Third card -->
+              <div class="carousel-item flex-none w-64 mx-4 transform transition-all duration-500 ease-in-out">
+                  <div class="overflow-hidden rounded-xl shadow-lg">
+                      <div class="relative">
+                          <img src="https://i.pinimg.com/736x/c2/fd/f0/c2fdf08502df9957dc7c397fd48bd383.jpg" alt="Walking" class="w-full h-64 object-cover">
+                          <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-20"></div>
+                      </div>
+                  </div>
+                  <div class="mt-4 text-center">
+                      <h3 class="text-xl font-semibold" style="color: #333333;">Angkor Wat - Sunrise</h3>
+                      <p class="text-sm hover:underline" style="color: #C9A14A; cursor: pointer;">See More</p>
+                  </div>
+              </div>
+
+              <!-- Fourth card -->
+              <div class="carousel-item flex-none w-64 mx-4 transform transition-all duration-500 ease-in-out">
+                  <div class="overflow-hidden rounded-xl shadow-lg">
+                      <div class="relative">
+                          <img src="https://i.pinimg.com/736x/92/a6/db/92a6dbddefb20a2f339f63896973191d.jpg" alt="Cruises" class="w-full h-64 object-cover">
+                          <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-20"></div>
+                      </div>
+                  </div>
+                  <div class="mt-4 text-center">
+                      <h3 class="text-xl font-semibold" style="color: #333333;">Baksei Chamkrong</h3>
+                      <p class="text-sm hover:underline" style="color: #C9A14A; cursor: pointer;">See More</p>
+                  </div>
+              </div>
+
+              <!-- Fifth card -->
+              <div class="carousel-item flex-none w-64 mx-4 transform transition-all duration-500 ease-in-out">
+                  <div class="overflow-hidden rounded-xl shadow-lg">
+                      <div class="relative">
+                          <img src="https://i.pinimg.com/736x/b7/b1/d3/b7b1d37b43392d9cf7b228f9de0b6e6d.jpg" alt="Hiking" class="w-full h-64 object-cover">
+                          <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-20"></div>
+                      </div>
+                  </div>
+                  <div class="mt-4 text-center">
+                      <h3 class="text-xl font-semibold" style="color: #333333;">Angkor Thom/h3>
+                      <p class="text-sm hover:underline" style="color: #C9A14A; cursor: pointer;">See More</p>
+                  </div>
+              </div>
+
+              
+          </div>
+
+          <!-- Right Arrow -->
+          <button 
+              id="right-arrow" 
+              class="absolute right-0 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full shadow-lg flex items-center justify-center transition-all duration-300 focus:outline-none"
+              style="background-color: rgba(214, 193, 164, 0.8); hover: background-color: #D6C1A4;
+              aria-label="Next slide">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" style="color: #8B5E3C;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+          </button>
+      </div>
+      <div class="flex justify-center mt-8">
+          <span class="pagination-dot active"></span>
+          <span class="pagination-dot"></span>
+          <span class="pagination-dot"></span>
+          <span class="pagination-dot"></span>
+          <span class="pagination-dot"></span>
+      </div>
+  </div>
+  </section>
+
+  <!-- carousel2 -->
+  <section>
+    <div class="container mx-auto px-4 py-8 md:py-12 relative" x-data="carouselData()" x-init="init()" x-cloak>
+        <!-- Header -->
+        <div class="text-center mb-8 md:mb-12">
+          <h3 class="text-xl md:text-2xl font-serif italic text-blue-600">Top Destination</h3>
+          <h2 class="text-3xl dark:text-orange-400 md:text-4xl font-bold text-gray-800 mt-2">Popular Destination</h2>
+        </div>
+        
+        <!-- Carousel container -->
+        <div class="perspective-1500 w-full mx-auto h-[400px] md:h-[500px] overflow-hidden relative">
+          <div class="preserve-3d relative w-full h-full"
+               x-ref="stage"
+               @touchstart="touchStart"
+               @touchmove="touchMove"
+               @touchend="touchEnd"
+               @wheel.prevent="handleWheel">
+            
+            <template x-for="(destination, index) in displayDestinations" :key="index">
+              <div class="absolute backface-hidden rounded-2xl overflow-hidden shadow-xl cursor-pointer transition-all duration-800 ease-out"
+                   :style="getCardStyle(index)"
+                   :class="getCardSizeClasses()"
+                   @click="goToSlide(getOriginalIndex(index))">
+                
+                <!-- Card image -->
+                <img :src="destination.image" :alt="destination.title" class="w-full h-full object-cover">
+                
+                <!-- Card shine effect -->
+                <div class="card-shine absolute inset-0 pointer-events-none"></div>
+                
+                <!-- Card reflection effect -->
+                <div class="card-reflection absolute left-0 right-0 h-20 -bottom-20 opacity-50 z-[-1]">
+                  <img :src="destination.image" :alt="" class="w-full h-full object-cover opacity-30">
+                </div>
+                
+                <!-- Card content overlay -->
+                <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-6">
+                  <h3 class="text-xl md:text-2xl font-bold text-white" x-text="destination.title"></h3>
+                  <p class="flex items-center mt-2 text-white">
+                    <span x-text="destination.listings"></span>
+                    <span class="ml-1">Listing</span>
+                  </p>
+                  
+                  <!-- View All button -->
+                  <div class="absolute bottom-6 right-6">
+                    <button class="flex items-center bg-white bg-opacity-80 text-blue-900 px-3 py-1.5 md:px-4 md:py-2 rounded-full font-medium text-xs md:text-sm transition-all duration-300 hover:bg-opacity-100 hover:-translate-y-0.5">
+                      View All
+                      <svg class="w-3 h-3 md:w-4 md:h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </template>
+          </div>
+          
+          <!-- Navigation arrows -->
+          <button 
+            @click="prevSlide" 
+            class="absolute left-2 md:left-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-80 p-2 md:p-3 rounded-full shadow-lg focus:outline-none z-100 transition-all duration-300 hover:bg-opacity-100 hover:scale-110">
+            <svg class="w-5 h-5 md:w-6 md:h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+            </svg>
+          </button>
+          <button 
+            @click="nextSlide" 
+            class="absolute right-2 md:right-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-80 p-2 md:p-3 rounded-full shadow-lg focus:outline-none z-100 transition-all duration-300 hover:bg-opacity-100 hover:scale-110">
+            <svg class="w-5 h-5 md:w-6 md:h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </button>
+        </div>
+        
+        <!-- Navigation dots -->
+        <div class="flex justify-center mt-6 md:mt-8 space-x-2 md:space-x-3">
+          <template x-for="(destination, index) in destinations" :key="index">
+            <button 
+              @click="goToSlide(index)" 
+              class="h-2 md:h-3 transition-colors duration-300 rounded-full"
+              :class="[currentIndex === index ? 'bg-blue-600 w-4 md:w-6' : 'bg-gray-300 w-2 md:w-3']">
+            </button>
+          </template>
+        </div>
+        
+        <!-- Scroll position indicator -->
+        <div class="w-full max-w-md mx-auto mt-6 md:mt-8 px-4">
+          <input 
+            type="range" 
+            class="custom-range w-full"
+            :min="0"
+            :max="destinations.length - 1"
+            :value="currentIndex"
+            @input="goToSlide(parseInt($event.target.value))"
+            step="0.01">
+        </div>
+      </div>
+  </section>
+
+  <!-- plan Trip? -->
+  <section class="bg-background font-sans text-text-main">
+    <div class="container mx-auto px-4 py-16 relative overflow-hidden">
+      <!-- Hot Air Balloon Decorations - Only visible on larger screens -->
+      <div class="hidden md:block absolute left-10 top-20">
+        <svg class="w-10 h-10 text-primary animate-float" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12,4C8.69,4 6,6.69 6,10C6,12.97 8.31,15.44 11,15.92V20H9V22H15V20H13V15.92C15.69,15.44 18,12.97 18,10C18,6.69 15.31,4 12,4Z"></path>
+        </svg>
+      </div>
+      <div class="hidden md:block absolute left-16 top-12">
+        <svg class="w-8 h-8 text-primary animate-float-delay-1" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12,4C8.69,4 6,6.69 6,10C6,12.97 8.31,15.44 11,15.92V20H9V22H15V20H13V15.92C15.69,15.44 18,12.97 18,10C18,6.69 15.31,4 12,4Z"></path>
+        </svg>
+      </div>
+      <div class="hidden md:block absolute left-6 top-32">
+        <svg class="w-6 h-6 text-primary animate-float-delay-2" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12,4C8.69,4 6,6.69 6,10C6,12.97 8.31,15.44 11,15.92V20H9V22H15V20H13V15.92C15.69,15.44 18,12.97 18,10C18,6.69 15.31,4 12,4Z"></path>
+        </svg>
+      </div>
+  
+      <div class="flex flex-col lg:flex-row items-center">
+        <!-- Left Side - Images in Circular Layout -->
+        <!-- For PC/Tablet Display -->
+        <div class="hidden md:block w-full lg:w-1/2 mb-12 lg:mb-0 relative" style="height: 550px;">
+          <!-- Left Image - Hiker with rounded left edge -->
+          <div class="absolute left-0 top-0 h-[550px] w-[280px] overflow-hidden rounded-l-full shadow-lg transform transition-all duration-500 hover:scale-105">
+            <img 
+              src="https://i.pinimg.com/736x/56/e0/61/56e061f887ef5222162eb4fd859cf18c.jpg" 
+              alt="Hiker in mountains" 
+              class="h-full w-full object-cover object-center"
+            >
+          </div>
+          
+          <!-- Top Right Image - Circular Kayaker -->
+          <div class="absolute right-0 top-0 h-[250px] w-[250px] overflow-hidden rounded-full shadow-lg transform transition-all duration-500 hover:scale-105">
+            <img 
+              src="https://i.pinimg.com/736x/8b/6d/85/8b6d85d9d00fd01f1bfb2191903c2615.jpg" 
+              alt="Person kayaking on a lake" 
+              class="h-full w-full object-cover object-center"
+            >
+          </div>
+          
+          <!-- Bottom Right Image - Circular Tourists -->
+          <div class="absolute right-0 bottom-0 h-[250px] w-[250px] overflow-hidden rounded-full shadow-lg transform transition-all duration-500 hover:scale-105">
+            <img 
+              src="https://i.pinimg.com/736x/81/3f/d1/813fd158cca3d458369af3b6337a6ca5.jpg" 
+              alt="Tourists taking photos" 
+              class="h-full w-full object-cover object-center"
+            >
           </div>
         </div>
-        <p class="text-sm text-gray-300 mb-4">
-          Explore unforgettable journeys through ancient wonders and stunning landscapes with our expertly crafted
-          tours.
-        </p>
-        <div class="flex space-x-3">
-          <a href="#" class="bg-gray-600 p-2 px-3.5 rounded-full hover:bg-blue-500"><i
-              class="fab fa-facebook-f"></i></a>
-          <a href="#" class="bg-gray-600 p-2 px-3.5 rounded-full hover:bg-blue-400"><i class="fab fa-twitter"></i></a>
-          <a href="#" class="bg-gray-600 p-2 px-3.5 rounded-full hover:bg-blue-600"><i
-              class="fab fa-linkedin-in"></i></a>
-          <a href="#" class="bg-gray-600 p-2 px-3.5 rounded-full hover:bg-green-500"><i class="fab fa-whatsapp"></i></a>
-          <a href="#" class="bg-gray-600 p-2 px-3.5 rounded-full hover:bg-pink-500"><i class="fab fa-instagram"></i></a>
+  
+        <!-- For Mobile Display -->
+        <div class="md:hidden w-full mb-12 flex flex-col items-center">
+          <!-- Main Image - Hiker -->
+          <div class="w-4/5 h-64 mb-4 overflow-hidden rounded-2xl shadow-lg">
+            <img 
+              src="https://i.pinimg.com/736x/56/e0/61/56e061f887ef5222162eb4fd859cf18c.jpg" 
+              alt="Hiker in mountains" 
+              class="h-full w-full object-cover object-center"
+            >
+          </div>
+          
+          <!-- Two Circular Images in a Row -->
+          <div class="flex justify-center space-x-4 w-full">
+            <!-- Kayaker -->
+            <div class="w-36 h-36 overflow-hidden rounded-full shadow-lg">
+              <img 
+                src="https://i.pinimg.com/736x/8b/6d/85/8b6d85d9d00fd01f1bfb2191903c2615.jpg" 
+                alt="Person kayaking on a lake" 
+                class="h-full w-full object-cover object-center"
+              >
+            </div>
+            
+            <!-- Tourists -->
+            <div class="w-36 h-36 overflow-hidden rounded-full shadow-lg">
+              <img 
+                src="https://i.pinimg.com/736x/81/3f/d1/813fd158cca3d458369af3b6337a6ca5.jpg" 
+                alt="Tourists taking photos" 
+                class="h-full w-full object-cover object-center"
+              >
+            </div>
+          </div>
+        </div>
+        
+        <!-- Right Side - Content -->
+        <div class="w-full lg:w-1/2 pl-0 lg:pl-12 relative z-30">
+          <h2 class="text-xl text-secondary font-medium italic text-center lg:text-left">Let's Go Together</h2>
+          <h1 class="text-4xl md:text-5xl font-bold mb-6 text-text-heading text-center lg:text-left">Plan Your Trip <br>With us</h1>
+          
+          <p class="text-text-main mb-8 text-center lg:text-left">
+            There are many variations of passages of available but the 
+            majority have suffered alteration in some form, by injected
+            hum randomised words which don't look even slightly.
+          </p>
+          
+          <!-- Feature Cards -->
+          <div class="space-y-8">
+            <!-- Exclusive Trip Card -->
+            <div class="flex items-center group">
+              <div class="bg-secondary text-white rounded-full p-4 mr-4 transform transition-all duration-300 group-hover:bg-accent group-hover:scale-110">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold text-text-heading mb-1">Exclusive Trip</h3>
+                <p class="text-text-main">There are many variations of passages <br class="hidden sm:block">of available but the majority.</p>
+              </div>
+            </div>
+            
+            <!-- Professional Guide Card -->
+            <div class="flex items-center group">
+              <div class="bg-secondary text-white rounded-full p-4 mr-4 transform transition-all duration-300 group-hover:bg-accent group-hover:scale-110">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold text-text-heading mb-1">Professional Guide</h3>
+                <p class="text-text-main">There are many variations of passages <br class="hidden sm:block">of available but the majority.</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Learn More Button -->
+          <div class="mt-10 flex justify-center lg:justify-start">
+            <button class="bg-accent hover:bg-secondary text-white px-6 py-3 rounded-full flex items-center transform transition-all duration-300 hover:scale-105">
+              <span class="font-medium mr-2">Learn More</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
-
-      <!-- Quick Links -->
-      <div>
-        <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
-        <ul class="space-y-2 text-gray-300 text-sm">
-          <li><a href="#" class="hover:text-white ">&rsaquo; Home</a></li>
-          <li><a href="#" class="hover:text-white">&rsaquo; Destination</a></li>
-          <li><a href="#" class="hover:text-white">&rsaquo; About Us</a></li>
-          <li><a href="#" class="hover:text-white">&rsaquo; Contact Us</a></li>
-        </ul>
+      
+      <!-- Traveler Image (Right Side) - Only visible on large screens -->
+      <div class="hidden lg:block absolute right-0 top-1/2 transform -translate-y-1/2">
+        <img 
+          src="/api/placeholder/400/600" 
+          alt="Traveler with suitcase" 
+          class="h-96 object-cover object-center transform transition-all duration-500 hover:scale-105"
+        >
       </div>
+    </div>
+   </section>
+  
+   <!-- Popular destination -->
+    <section class="bg-[#FAF8F2] dark:bg-[#111827] font-sans text-text-main">
+      <div class="container mx-auto px-4 py-12">
+        <!-- Header Section -->
+        <div class="text-center mb-12">
+            <h3 class="text-[#C9A14A] text-2xl mb-2">Best Recommended Places</h3>
+            <h2 class="text-[#1A1A1A] text-4xl dark:text-orange-400 font-bold mb-4">Popular Destination we offer for all</h2>
+            <p class="text-[#333333] max-w-3xl mx-auto">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                incididunt ut labore et dolore magna aliqua.
+            </p>
+        </div>
 
-      <!-- Contact Info -->
-      <div>
-        <h3 class="text-lg font-semibold mb-4">Contact</h3>
-        <ul class="space-y-4 text-sm text-gray-300">
-          <li class="flex items-start gap-3">
-            <div class="bg-gray-600 p-2 px-3.5 rounded-full">
-              <i class="fas fa-phone-alt"></i>
+        <!-- Carousel Container with Alpine.js -->
+        <div class="relative">
+            <!-- Carousel Track -->
+            <div class="relative overflow-hidden w-full">
+                <div class="flex transition-transform duration-500" :style="`transform: translateX(-${activeSlide * 100}%)`">
+                    
+                    <!-- Slide 1 -->
+                    <div class="w-full flex-shrink-0">
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                            <!-- Card 1 -->
+                            <div class="bg-white dark:bg-gray-400 rounded-xl overflow-hidden shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-xl border border-[#EEEAE2]">
+                                <a href="#" class="block">
+                                    <img src="https://i.pinimg.com/736x/81/3f/d1/813fd158cca3d458369af3b6337a6ca5.jpg" alt="Angkor Wat" class="w-full h-48 object-cover">
+                                    <div class="p-4">
+                                        <h3 class="text-lg font-bold text-[#1A1A1A]">Angkor Wat</h3>
+                                        <p class="text-sm text-gray-500">⦿Angkor Wat, Siem Reap, Cambodia</p>
+                                        <p class="text-xl font-bold text-[#8B5E3C] mt-2">$250.00<span class="text-sm font-normal">/Person</span></p>
+                                        <div class="flex justify-between items-center mt-4">
+                                            <div class="flex items-center text-gray-500">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                </svg>
+                                                <span>6 Days</span>
+                                            </div>
+                                            <button class="bg-[#D6C1A4] hover:bg-[#C9A14A] text-[#1A1A1A] px-4 py-2 rounded-lg flex items-center transition duration-300">
+                                                Book Now
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- Card 2 -->
+                            <div class="bg-white dark:bg-gray-400  rounded-xl overflow-hidden shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-xl border border-[#EEEAE2]">
+                                <a href="#" class="block">
+                                    <img src="https://lh3.googleusercontent.com/gps-cs-s/AC9h4noaUhOYra4sb7ZTk9JV1CnwGDsPHNb2dApb9hJhevtv9pQp3tvvrmhThcKM99exkQeTdghd5R5fPkSdONkOVKDJOzkVVhi3uxbImkQ7Ym26Xg5lO7IGXoLMcrcQxQfBFxTcocI=s680-w680-h510-rw" alt="Prasat Sambor Prei Kuk" class="w-full h-48 object-cover">
+                                    <div class="p-4">
+                                        <h3 class="text-lg font-bold text-[#1A1A1A]">Prasat Sambor Prei Kuk</h3>
+                                        <p class="text-sm text-gray-500">⦿Cambodia, Prasat Sambor Prei Kuk</p>
+                                        <p class="text-xl font-bold text-[#8B5E3C] mt-2">$569.00<span class="text-sm font-normal">/Person</span></p>
+                                        <div class="flex justify-between items-center mt-4">
+                                            <div class="flex items-center text-gray-500">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                </svg>
+                                                <span>3 Days</span>
+                                            </div>
+                                            <button class="bg-[#D6C1A4] hover:bg-[#C9A14A] text-[#1A1A1A] px-4 py-2 rounded-lg flex items-center transition duration-300">
+                                                Book Now
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- Card 3 -->
+                            <div class="bg-white dark:bg-gray-400  rounded-xl overflow-hidden shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-xl border border-[#EEEAE2]">
+                                <a href="#" class="block">
+                                    <img src="https://lh3.googleusercontent.com/gps-cs-s/AC9h4noWdQfEwAMfCaxp2dols9U04uPlvT-KoCESCksUN1GwKlDyhz8cDN2ar0Lkb6Wvecw0TDnFAMPZajemAPDied69B_YXhhq3z1OYpMc5nCSUa_8OdI60JwFHcKQz9bxRo5jhyZw0Xw=s680-w680-h510-rw" alt="Khos Rong" class="w-full h-48 object-cover">
+                                    <div class="p-4">
+                                        <h3 class="text-lg font-bold text-[#1A1A1A]">Khos Rong</h3>
+                                        <p class="text-sm text-gray-500">⦿Khos Rong, Island</p>
+                                        <p class="text-xl font-bold text-[#8B5E3C] mt-2">$569.00<span class="text-sm font-normal">/Person</span></p>
+                                        <div class="flex justify-between items-center mt-4">
+                                            <div class="flex items-center text-gray-500">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                </svg>
+                                                <span>5 Days</span>
+                                            </div>
+                                            <button class="bg-[#D6C1A4] hover:bg-[#C9A14A] text-[#1A1A1A] px-4 py-2 rounded-lg flex items-center transition duration-300">
+                                                Book Now
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- Card 4 -->
+                            <div class="bg-white dark:bg-gray-400  rounded-xl overflow-hidden shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-xl border border-[#EEEAE2]">
+                                <a href="#" class="block">
+                                    <img src="https://lh3.googleusercontent.com/gpms-cs-s/AB8u6HYr4WBCmMNH136gvIoKRZHiF4CcOsZbRK2jatD2ClMc21Qp004U9vNlMXJuP1_yYFHpmR6z5DCFztereCkHD1cSQEfpQKPVS4SnFSfjvnb0CByIv1Ll3hyvgaGjTdgSlytiADt5gg=s680-w680-h510-rw" alt="Angkor Thom temple" class="w-full h-48 object-cover">
+                                    <div class="p-4">
+                                        <h3 class="text-lg font-bold text-[#1A1A1A]">Angkor Thom</h3>
+                                        <p class="text-sm text-gray-500">⦿Angkor Thom temple, Buddhist temple, Cambodia</p>
+                                        <p class="text-xl font-bold text-[#8B5E3C] mt-2">$600.00<span class="text-sm font-normal">/Person</span></p>
+                                        <div class="flex justify-between items-center mt-4">
+                                            <div class="flex items-center text-gray-500">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                </svg>
+                                                <span>6 Days</span>
+                                            </div>
+                                            <button class="bg-[#D6C1A4] hover:bg-[#C9A14A] text-[#1A1A1A] px-4 py-2 rounded-lg flex items-center transition duration-300">
+                                                Book Now
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div>
-              <p>(+855) 96-990-489</p>
-              <p>(+855) 88-990-489</p>
-            </div>
-          </li>
-          <h3 class="text-lg font-semibold mb-4">Address</h3>
-          <li class="flex items-start gap-3">
-            <div class="bg-gray-600 p-2 px-3.5 rounded-full">
-              <i class="fas fa-envelope"></i>
-            </div>
-            <div>
-              <p>mailinfo00@tourism.com</p>
-              <p>support24@tourism.com</p>
-            </div>
-          </li>
-          <li class="flex items-start gap-3">
-            <div class="bg-gray-600 p-2 px-3.5 rounded-full">
-              <i class="fas fa-map-marker-alt"></i>
-            </div>
-            <div>
-              <p>No. 24, Street 562,<br> Phnom Penh,
-                Cambodia</p>
-            </div>
-          </li>
-        </ul>
+        </div>
+    </div>
+    </section>
+
+    <!-- recent gallery-img -->
+     <section>
+      
+<!-- Gallery Section -->
+<div class="container mx-auto px-4 py-16 relative overflow-hidden">
+  <!-- Decorative Elements -->
+  <div class="absolute left-0 top-40 opacity-10">
+    <svg width="120" height="120" viewBox="0 0 120 120" class="text-gold fill-current">
+      <path d="M60,10 Q90,30 110,60 T60,110 T10,60 T60,10Z"></path>
+    </svg>
+  </div>
+  
+  <div class="absolute right-0 bottom-10 opacity-10">
+    <svg width="150" height="150" viewBox="0 0 150 150" class="text-brick fill-current">
+      <path d="M75,15 Q110,35 135,75 T75,135 T15,75 T75,15Z"></path>
+    </svg>
+  </div>
+  
+  <div class="absolute -left-10 bottom-40 opacity-10">
+    <svg width="100" height="100" viewBox="0 0 100 100" class="text-sandstone fill-current rotate-45">
+      <path d="M50,10 Q75,25 90,50 T50,90 T10,50 T50,10Z"></path>
+    </svg>
+  </div>
+  
+  <!-- Gallery Heading -->
+  <div class="text-center mb-16 relative z-10">
+    <h2 class="text-2xl md:text-3xl font-medium italic text-gold">Make Your Tour More Pleasure</h2>
+    <h1 class="text-4xl md:text-5xl font-bold text-soft-black mt-2">Recent Gallery</h1>
+    <div class="w-24 h-1 bg-brick mx-auto mt-6"></div>
+  </div>
+  
+  <!-- Gallery Grid - Masonry Style -->
+  <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 relative z-10">
+    <!-- Column 1 -->
+    <div class="grid gap-6">
+      <!-- Beach Image -->
+      <div class="group relative cursor-pointer overflow-hidden rounded-2xl shadow-lg" onclick="openLightbox('https://www.experienceparkhyattsiemreap.com/wp-content/uploads/2024/05/Park-Hyatt-Siem-Reap-SEO-MAY-C02-1_1200x628-1200x800.jpg')">
+        <img src="https://www.experienceparkhyattsiemreap.com/wp-content/uploads/2024/05/Park-Hyatt-Siem-Reap-SEO-MAY-C02-1_1200x628-1200x800.jpg" alt="Angkor Wat" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end">
+          <div class="p-4 text-white">
+            <span class="bg-gold/80 text-white text-xs px-3 py-1 rounded-full">Beach</span>
+            <h3 class="font-semibold mt-2">Tropical Paradise</h3>
+          </div>
+        </div>
       </div>
-
-      <!-- Instagram Post -->
-      <div>
-        <h3 class="text-lg font-semibold mb-4 text-white">Instagram Post</h3>
-        <div class="grid grid-cols-3 gap-2">
-          <!-- Instagram Image Item -->
-          <div class="relative group w-full h-20 rounded-md overflow-hidden">
-            <img
-              src="https://www.cambotours.com/userfiles/thumbs/angkor-wat-angkor-thom-bayon-ta-prohm-temple-private-tour.jpg"
-              class="w-full h-full object-cover" />
-            <div
-              class="absolute inset-0 bg-[#3336369b] bg-opacity-50 flex justify-center items-center text-white text-xl translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out">
-              <i class="fab fa-instagram"></i>
-            </div>
-          </div>
-
-          <!-- Repeat for other images -->
-          <div class="relative group w-full h-20 rounded-md overflow-hidden">
-            <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5tSh24KWzNID6qUJWYNg8xhTT_5thkB8Tj3nNgbVMD8mxXHMaAtL0bUyhxkQrr8qNLZk&usqp=CAU"
-              class="w-full h-full object-cover" />
-            <div
-              class="absolute inset-0 bg-[#3336369b] bg-opacity-50 flex justify-center items-center text-white text-xl translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out">
-              <i class="fab fa-instagram"></i>
-            </div>
-          </div>
-
-          <div class="relative group w-full h-20 rounded-md overflow-hidden">
-            <img src="https://www.siemreap.net/wp-content/uploads/2019/02/Equinox-at-Angkor-Wat.jpg"
-              class="w-full h-full object-cover" />
-            <div
-              class="absolute inset-0 bg-[#3336369b] bg-opacity-50 flex justify-center items-center text-white text-xl translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out">
-              <i class="fab fa-instagram"></i>
-            </div>
-          </div>
-
-          <div class="relative group w-full h-20 rounded-md overflow-hidden">
-            <img
-              src="https://images.squarespace-cdn.com/content/v1/531fa7cde4b04709d61d34e5/1472994148467-5PYFT285KKVJVAJY0MYS/image-asset.jpeg"
-              class="w-full h-full object-cover" />
-            <div
-              class="absolute inset-0 bg-[#3336369b] bg-opacity-50 flex justify-center items-center text-white text-xl translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out">
-              <i class="fab fa-instagram"></i>
-            </div>
-          </div>
-
-          <div class="relative group w-full h-20 rounded-md overflow-hidden">
-            <img
-              src="https://product.hstatic.net/200000644819/product/1896736516741f6c85bb-2_41fe6973697846ef97e15059e413b9cd_master.jpg"
-              class="w-full h-full object-cover" />
-            <div
-              class="absolute inset-0 bg-[#3336369b] bg-opacity-50 flex justify-center items-center text-white text-xl translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out">
-              <i class="fab fa-instagram"></i>
-            </div>
-          </div>
-
-          <div class="relative group w-full h-20 rounded-md overflow-hidden">
-            <img
-              src="https://th-thumbnailer.cdn-si-edu.com/TMVzhHVP-GUTRXARVeIMLwVxIJ8=/fit-in/1200x0/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer/a1/88/a188a6f4-143d-4df2-b955-f60e7872b307/gg7p00.jpg"
-              class="w-full h-full object-cover" />
-            <div
-              class="absolute inset-0 bg-[#3336369b] bg-opacity-50 flex justify-center items-center text-white text-xl translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out">
-              <i class="fab fa-instagram"></i>
-            </div>
+      
+      <!-- Mountain Viewpoint -->
+      <div class="group relative cursor-pointer overflow-hidden rounded-2xl shadow-lg" onclick="openLightbox('https://southeastasiabackpacker.com/wp-content/uploads/2024/02/Bousra-Waterfall-Sen-Monorom-1200x800.jpg')">
+        <img src="https://southeastasiabackpacker.com/wp-content/uploads/2024/02/Bousra-Waterfall-Sen-Monorom-1200x800.jpg" alt="Amazing place" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end">
+          <div class="p-4 text-white">
+            <span class="bg-gold/80 text-white text-xs px-3 py-1 rounded-full">Mountain</span>
+            <h3 class="font-semibold mt-2">Scenic Viewpoint</h3>
           </div>
         </div>
       </div>
     </div>
+    
+    <!-- Column 2 -->
+    <div class="grid gap-6">
+      <!-- Boat Tour Image -->
+      <div class="group relative cursor-pointer overflow-hidden rounded-2xl shadow-lg" onclick="openLightbox('https://cms.siemreaper.click/uploads/phnom_penh_city_tour_in_cambodia2712_00d1599de9.jpeg')">
+        <img src="https://cms.siemreaper.click/uploads/phnom_penh_city_tour_in_cambodia2712_00d1599de9.jpeg" alt="Phnom Penh" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end">
+          <div class="p-4 text-white">
+            <span class="bg-gold/80 text-white text-xs px-3 py-1 rounded-full">Adventure</span>
+            <h3 class="font-semibold mt-2">Canyon Boat Tour</h3>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Island View Image -->
+      <div class="group relative cursor-pointer overflow-hidden rounded-2xl shadow-lg" onclick="openLightbox('https://cms.siemreaper.click/uploads/sok_san_beach_cambodia2712_922e94086d.jpeg')">
+        <img src="https://cms.siemreaper.click/uploads/sok_san_beach_cambodia2712_922e94086d.jpeg" alt="Khos Rong" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end">
+          <div class="p-4 text-white">
+            <span class="bg-gold/80 text-white text-xs px-3 py-1 rounded-full">Island</span>
+            <h3 class="font-semibold mt-2">Tropical Overlook</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Column 3 -->
+    <div class="grid gap-6">
+      <!-- City Tour Image -->
+      <div class="group relative cursor-pointer overflow-hidden rounded-2xl shadow-lg" onclick="openLightbox('https://cms.siemreaper.click/uploads/bokor_mountain_in_kampot2712_6ed50cf717.jpeg')">
+        <img src="https://cms.siemreaper.click/uploads/bokor_mountain_in_kampot2712_6ed50cf717.jpeg" alt="Kampot and Kep" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end">
+          <div class="p-4 text-white">
+            <span class="bg-gold/80 text-white text-xs px-3 py-1 rounded-full">Urban</span>
+            <h3 class="font-semibold mt-2">City Exploration</h3>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Ski Adventure Image -->
+      <div class="group relative cursor-pointer overflow-hidden rounded-2xl shadow-lg" onclick="openLightbox('https://cms.siemreaper.click/uploads/Cardamom_mountain2712_9c48e5bfc6.jpeg')">
+        <img src="https://cms.siemreaper.click/uploads/Cardamom_mountain2712_9c48e5bfc6.jpeg" alt=" Cardamom Mountains" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end">
+          <div class="p-4 text-white">
+            <span class="bg-gold/80 text-white text-xs px-3 py-1 rounded-full">Winter</span>
+            <h3 class="font-semibold mt-2">Ski Adventure</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Column 4 - Only visible on larger screens -->
+    <div class="hidden lg:grid gap-6">
+      <!-- Cruise Ship Image -->
+      <div class="group relative cursor-pointer overflow-hidden rounded-2xl shadow-lg" onclick="openLightbox('https://cms.siemreaper.click/uploads/kirirrom_cambodia2712_f38d1898b1.jpeg')">
+        <img src="https://cms.siemreaper.click/uploads/kirirrom_cambodia2712_f38d1898b1.jpeg" alt="Kirirom National Park" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end">
+          <div class="p-4 text-white">
+            <span class="bg-gold/80 text-white text-xs px-3 py-1 rounded-full">Cruise</span>
+            <h3 class="font-semibold mt-2">Ocean Voyage</h3>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Additional Image -->
+      <div class="group relative cursor-pointer overflow-hidden rounded-2xl shadow-lg" onclick="openLightbox('https://cms.siemreaper.click/uploads/mondulkiri_cambodia2712_f92cfcf15d.jpeg')">
+        <img src="https://cms.siemreaper.click/uploads/mondulkiri_cambodia2712_f92cfcf15d.jpeg" alt="Mondulkiri" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end">
+          <div class="p-4 text-white">
+            <span class="bg-gold/80 text-white text-xs px-3 py-1 rounded-full">Nature</span>
+            <h3 class="font-semibold mt-2">Alpine Lake</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Small decorative icons at bottom -->
+  <div class="flex justify-between items-center mt-16 relative z-10">
+    <div class="text-teal-400 opacity-70">
+      <svg width="40" height="25" viewBox="0 0 80 50" class="fill-current">
+        <path d="M20,25 Q30,10 40,25 T60,25 Q70,35 60,40 T40,40 T20,40 Q10,35 20,25Z"></path>
+      </svg>
+    </div>
+    <div class="text-teal-400 opacity-70">
+      <svg width="40" height="40" viewBox="0 0 80 80" class="fill-current">
+        <path d="M40,10 Q60,20 70,40 T40,70 T10,40 T40,10Z"></path>
+      </svg>
+    </div>
+  </div>
+</div>
 
+<!-- Lightbox with Loading Animation -->
+<div id="lightbox" class="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 hidden">
+  <button onclick="closeLightbox()" class="absolute top-6 right-6 text-white text-4xl hover:text-gold transition">&times;</button>
+  
+  <!-- Loading spinner -->
+  <div id="lightboxLoader" class="inline-block w-12 h-12 border-4 border-white border-t-gold rounded-full animate-spin"></div>
+  
+  <!-- Image -->
+  <img id="lightboxImage" src="" alt="Enlarged view" class="max-h-[90vh] max-w-[90vw] rounded shadow-2xl hidden">
+  
+  <!-- Navigation buttons -->
+  <button id="prevButton" class="absolute left-4 text-4xl text-white opacity-70 hover:opacity-100 hover:text-gold transition">&#10094;</button>
+  <button id="nextButton" class="absolute right-4 text-4xl text-white opacity-70 hover:opacity-100 hover:text-gold transition">&#10095;</button>
+</div>
+     </section>
+
+
+     <!-- feeedback -->
+    <section>
+      <div class="container mx-auto px-4 py-12 max-w-7xl">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl lg:text-4xl font-serif text-secondary mb-2">Testimonial</h2>
+            <h1 class="text-4xl lg:text-5xl font-bold font-serif text-textHeading">What Clients Say About Us</h1>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
+            <!-- Testimonial 1: Angelina Rose -->
+            <div class="bg-surface/50 backdrop-blur-sm rounded-lg p-6 relative shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 rounded-full border-2 border-secondary overflow-hidden">
+                        <img src="https://i.pinimg.com/736x/48/49/ba/4849ba2ea6517f805785071120cccc08.jpg" alt="Cristiano Ronaldo" class="w-full h-full object-cover">
+                    </div>
+                    <div class="ml-4">
+                        <h3 class="font-bold text-textHeading">Cristiano Ronaldo</h3>
+                        <p class="text-sm text-textMain/70">Traveller</p>
+                    </div>
+                    <div class="ml-auto text-yellow-400">★★★★★</div>
+                </div>
+                <p class="mb-4 text-textMain">"Great visual and historical context! Consider briefly explaining why Angkor Wat is a UNESCO World Heritage Site or sharing an interesting fact (e.g., it's the largest religious monument in the world). That extra detail would make the card more memorable."</p>
+                <div class="absolute -bottom-5 left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-sky-500 text-white flex items-center justify-center text-3xl">
+                    ❞
+                </div>
+            </div>
+
+            <!-- Testimonial 2: Andrew Simon -->
+            <div class="bg-surface/50 backdrop-blur-sm rounded-lg p-6 relative shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 rounded-full border-2 border-secondary overflow-hidden">
+                        <img src="https://i.pinimg.com/736x/87/67/19/876719adcff3ea2b323d505de4892ab4.jpg" alt="Lionel Messi" class="w-full h-full object-cover">
+                    </div>
+                    <div class="ml-4">
+                        <h3 class="font-bold text-textHeading">Lionel Messi</h3>
+                        <p class="text-sm text-textMain/70">Traveller</p>
+                    </div>
+                    <div class="ml-auto text-yellow-400">★★★★★</div>
+                </div>
+                <p class="mb-4 text-textMain">"Nice job capturing the essence of Khmer culture. You could enrich the card by mentioning a specific custom or tradition (like apsara dancing or Buddhist blessings), to give a more personal feel."</p>
+                <div class="absolute -bottom-5 left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-sky-500 text-white flex items-center justify-center text-3xl">
+                    ❞
+                </div>
+            </div>
+
+            <!-- Testimonial 3: Maria Doe -->
+            <div class="bg-surface/50 backdrop-blur-sm rounded-lg p-6 relative shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 rounded-full border-2 border-secondary overflow-hidden">
+                        <img src="https://i.pinimg.com/736x/07/39/7c/07397c3312d5916e9ed6280607702122.jpg" alt="Pogba" class="w-full h-full object-cover">
+                    </div>
+                    <div class="ml-4">
+                        <h3 class="font-bold text-textHeading">Pogba</h3>
+                        <p class="text-sm text-textMain/70">Traveller</p>
+                    </div>
+                    <div class="ml-auto text-yellow-400">★★★★★</div>
+                </div>
+                <p class="mb-4 text-textMain">"This card gives a lively vibe! Consider highlighting one or two must-try local street foods or unique souvenirs. A sensory detail—like the smell of grilled skewers or the colorful lanterns—would also enhance immersion."</p>
+                <div class="absolute -bottom-5 left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-sky-500 text-white flex items-center justify-center text-3xl">
+                    ❞
+                </div>
+            </div>
+
+            <!-- Testimonial 4: John Smith -->
+            <div class="bg-surface/50 backdrop-blur-sm rounded-lg p-6 relative shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 rounded-full border-2 border-secondary overflow-hidden">
+                        <img src="https://i.pinimg.com/736x/25/7e/e4/257ee4f12372bafd61c69a61f92144f1.jpg" alt="selena gomez" class="w-full h-full object-cover">
+                    </div>
+                    <div class="ml-4">
+                        <h3 class="font-bold text-textHeading">Selena Gomez</h3>
+                        <p class="text-sm text-textMain/70">Traveller</p>
+                    </div>
+                    <div class="ml-auto text-yellow-400">★★★★★</div>
+                </div>
+                <p class="mb-4 text-textMain">"Informative and unique choice! Adding a quick note about the best time to visit (like during the rainy season when water levels are high) would be useful. Also, a cultural insight into how locals live on the water would be impactful."</p>
+                <div class="absolute -bottom-5 left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-sky-500 text-white flex items-center justify-center text-3xl">
+                    ❞
+                </div>
+            </div>
+
+            <!-- Testimonial 5: Emma Wilson -->
+            <div class="bg-surface/50 backdrop-blur-sm rounded-lg p-6 relative shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 rounded-full border-2 border-secondary overflow-hidden">
+                        <img src="https://i.pinimg.com/736x/65/42/8f/65428fe9b99a3ac80f1bc94c5d2ee6e0.jpg" alt="Vanda" class="w-full h-full object-cover">
+                    </div>
+                    <div class="ml-4">
+                        <h3 class="font-bold text-textHeading">Vanda</h3>
+                        <p class="text-sm text-textMain/70">Traveller</p>
+                    </div>
+                    <div class="ml-auto text-yellow-400">★★★★★</div>
+                </div>
+                <p class="mb-4 text-textMain">"Well-structured! Maybe add variety by mentioning lesser-known temples like Ta Prohm or Banteay Srei. A tip about starting early to avoid crowds or hiring a local guide could offer extra value to readers."</p>
+                <div class="absolute -bottom-5 left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-sky-500 text-white flex items-center justify-center text-3xl">
+                    ❞
+                </div>
+            </div>
+
+            <!-- Testimonial 6: Michael Brown -->
+            <div class="bg-surface/50 backdrop-blur-sm rounded-lg p-6 relative shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 rounded-full border-2 border-secondary overflow-hidden">
+                        <img src="https://i.pinimg.com/736x/74/2b/be/742bbe98268e497ebc0d4f64aa20a228.jpg" alt="Dit-Way" class="w-full h-full object-cover">
+                    </div>
+                    <div class="ml-4">
+                        <h3 class="font-bold text-textHeading">G-Devith</h3>
+                        <p class="text-sm text-textMain/70">Traveller</p>
+                    </div>
+                    <div class="ml-auto text-yellow-400">★★★★★</div>
+                </div>
+                <p class="mb-4 text-textMain">"Great topic! You might want to mention a signature dish like amok or lok lak. A photo of one standout dish would add appetite appeal. Including a fun fact like how rice is central to every meal could also add context."</p>
+                <div class="absolute -bottom-5 left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-sky-500 text-white flex items-center justify-center text-3xl">
+                    ❞
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <!-- sponsor -->
+    <div class="my-20 py-10  relative overflow-hidden w-full ">
+      <div
+        id="carousel"
+        class="flex gap-10 whitespace-nowrap overflow-x-scroll scrollbar-hide cursor-grab select-none"
+      >
+      </div>
+    </div>
+
+    <!-- New & art -->
+     <section>
+        <!-- Main Container -->
+        <div class="max-w-7xl mx-auto px-4 py-8">
+          <!-- Header Section -->
+          <div class="flex justify-between items-center mb-8 flex-col sm:flex-row">
+              <div>
+                  <p class="text-[#8B5E3C] italic text-lg">About Us Restaurant</p>
+                  <h2 class="text-3xl md:text-4xl font-bold dark:text-orange-400 text-[#1A1A1A]">News & Articles From Tourm</h2>
+              </div>
+              <a href="#" class="mt-4 dark:text-orange-400 sm:mt-0 flex items-center px-6 py-2 border border-[#C9A14A] rounded-full text-[#333333] hover:bg-[#C9A14A] hover:text-white transition-all">
+                  See More Articles
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+              </a>
+          </div>
+          
+          <!-- Responsive Grid Container -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              <!-- Card 1 -->
+              <div class="bg-white dark:bg-gray-400 rounded-lg shadow-md hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300">
+                  <img src="https://www.livingthedreamrtw.com/wp-content/uploads/2015/04/G0047375-600x600.jpg" alt="Card Image" class="w-full h-48 object-cover rounded-t-lg">
+                  <div class="p-5">
+                      <div class="flex justify-between text-sm text-gray-500 mb-2">
+                          <span>Jul 09, 2024</span>
+                          <span>3 Min Read</span>
+                      </div>
+                      <h3 class="text-xl font-semibold text-[#1A1A1A] mb-4">Things to Do in Cambodia with Kids (Besides Angkor Wat)</h3>
+                      <a href="#" class="inline-flex items-center text-[#C9A14A] hover:text-[#8B5E3C] transition-colors">
+                          Read More
+                          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                          </svg>
+                      </a>
+                  </div>
+              </div>
+  
+              <!-- Card 2 -->
+              <div class="bg-white dark:bg-gray-400 rounded-lg shadow-md hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300">
+                  <img src="https://www.responsibletravel.com/imagesclient/24197_1626.jpg" alt="Card Image" class="w-full h-48 object-cover rounded-t-lg">
+                  <div class="p-5">
+                      <div class="flex justify-between text-sm text-gray-500 mb-2">
+                          <span>Jul 10, 2024</span>
+                          <span>3 Min Read</span>
+                      </div>
+                      <h3 class="text-xl font-semibold text-[#1A1A1A] mb-4">Cambodia family holiday for teenagers | Responsible Travel</h3>
+                      <a href="#" class="inline-flex items-center text-[#C9A14A] hover:text-[#8B5E3C] transition-colors">
+                          Read More
+                          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                          </svg>
+                      </a>
+                  </div>
+              </div>
+  
+              <!-- Card 3 -->
+              <div class="bg-white dark:bg-gray-400 rounded-lg shadow-md hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300">
+                  <img src="https://www.gocambodia.tours/wp-content/uploads/2018/07/Cambodia-Nightlife-All-about-Interesting-Nightlife-in-Cambodia.jpg" alt="Card Image" class="w-full h-48 object-cover rounded-t-lg">
+                  <div class="p-5">
+                      <div class="flex justify-between text-sm text-gray-500 mb-2">
+                          <span>Jul 10, 2024</span>
+                          <span>3 Min Read</span>
+                      </div>
+                      <h3 class="text-xl font-semibold text-[#1A1A1A] mb-4">Cambodia Nightlife | All about Interesting Nightlife in Cambodia</h3>
+                      <a href="#" class="inline-flex items-center text-[#C9A14A] hover:text-[#8B5E3C] transition-colors">
+                          Read More
+                          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                          </svg>
+                      </a>
+                  </div>
+              </div>
+          </div>
+      </div>
+     </section>
+
+     <!-- Get-in-Touch -->
+     <section class="bg-[#FAF8F2] dark:bg-[#111827] py-12 px-6">
+      <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-8">
+    
+        <!-- Heading -->
+        <div class="text-center lg:text-left">
+          <h2 class="text-2xl dark:text-orange-400 sm:text-3xl font-semibold text-[#1A1A1A]">
+            Get Updated The Latest<br class="hidden sm:inline" /> Newsletter
+          </h2>
+        </div>
+    
+        <!-- Form -->
+        <form class="w-full sm:w-auto flex flex-col sm:flex-row items-center gap-4">
+          <input 
+            type="email" 
+            placeholder="Enter your Email" 
+            class="w-full sm:w-72 px-6 py-3 rounded-full border border-[#D6C1A4] bg-white text-[#333333] placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#C9A14A]" 
+          />
+          <button 
+            type="submit" 
+            class="w-full sm:w-auto bg-[#8B5E3C] hover:bg-[#C9A14A] text-white px-6 py-3 rounded-full flex items-center justify-center gap-2 transition">
+            Subscribe Now
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10l11-6v12L3 10zm11-6v12l4-2.182V5.818L14 4z" />
+            </svg>
+          </button>
+        </form>
+    
+      </div>
+    </section>
+    
+    
+    
+  <footer class="bg-lprimary dark:bg-dprimary text-ltext-h dark:text-dtext-h pt-12 px-6 md:px-12 lg:px-16 xl:px-28 2xl:px-32">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 2xl:grid-cols-4 gap-10 lg:gap-4 pb-10">
+        <!-- Logo + Description -->
+        <div>
+            <div class="flex items-center space-x-3 mb-4">
+                <img src="./Asset/logoHaveBg.PNG" alt="Tourism Logo" class="w-30 h-30 rounded-full" />
+                <div>
+                    <h2 class="text-xl font-bold">Tourism</h2>
+                    <p class="text-sm">Explore World</p>
+                </div>
+            </div>
+            <p class="text-sm text-ltext-m dark:text-dtext-m mb-4">
+                Explore unforgettable journeys through ancient wonders and stunning landscapes with our expertly crafted tours.
+            </p>
+            <div class="flex space-x-3">
+                <a href="#" class="bg-white p-2 px-3.5 rounded-full hover:bg-[#1877F2]"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="bg-white p-2 px-3.5 rounded-full hover:bg-[#000000]"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#" class="bg-white p-2 px-3.5 rounded-full hover:bg-[#0077B5]"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="bg-white p-2 px-3.5 rounded-full hover:bg-[#25D366]"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" class="bg-white p-2 px-3.5 rounded-full hover:bg-gradient-to-r from-[#833ab4] via-[#fd1d1d] to-[#fcb045]"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <!-- Quick Links -->
+        <div>
+            <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+            <ul class="space-y-2 text-sm">
+                <li><a href="#" class="hover:text-laccent dark:hover:text-daccent hover:underline">› Home</a></li>
+                <li><a href="#" class="hover:text-laccent dark:hover:text-daccent hover:underline">› Destination</a></li>
+                <li><a href="#" class="hover:text-laccent dark:hover:text-daccent hover:underline">› About Us</a></li>
+                <li><a href="#" class="hover:text-laccent dark:hover:text-daccent hover:underline">› Contact Us</a></li>
+            </ul>
+        </div>
+        <!-- Contact Info -->
+        <div>
+            <h3 class="text-lg font-semibold mb-4">Contact</h3>
+            <ul class="space-y-4 text-sm">
+                <li class="flex items-start gap-3">
+                    <div class="bg-white p-2 px-3.5 rounded-full">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div>
+                        <p>(+855) 96-990-489</p>
+                        <p>(+855) 88-990-489</p>
+                    </div>
+                </li>
+                <h3 class="text-lg font-semibold mb-4">Address</h3>
+                <li class="flex items-start gap-3">
+                    <div class="bg-white p-2 px-3.5 rounded-full">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div>
+                        <p>mailinfo00@tourism.com</p>
+                        <p>support24@tourism.com</p>
+                    </div>
+                </li>
+                <li class="flex items-start gap-3">
+                    <div class="bg-white p-2 px-3.5 rounded-full">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div>
+                        <p>No. 24, Street 562,<br> Phnom Penh, Cambodia</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!-- Instagram Post -->
+        <div>
+            <h3 class="text-lg font-semibold mb-4">Instagram Post</h3>
+            <div class="grid grid-cols-3 gap-2">
+                <div class="relative group w-full h-20 rounded-md overflow-hidden">
+                    <img src="https://www.cambotours.com/userfiles/thumbs/angkor-wat-angkor-thom-bayon-ta-prohm-temple-private-tour.jpg" alt="Angkor Wat Tour" class="w-full h-full object-cover" />
+                    <div class="absolute inset-0 bg-[#3336369b] bg-opacity-50 flex justify-center items-center text-white text-xl translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </div>
+                <div class="relative group w-full h-20 rounded-md overflow-hidden">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5tSh24KWzNID6qUJWYNg8xhTT_5thkB8Tj3nNgbVMD8mxXHMaAtL0bUyhxkQrr8qNLZk&usqp=CAU" alt="Temple Ruins" class="w-full h-full object-cover" />
+                    <div class="absolute inset-0 bg-[#3336369b] bg-opacity-50 flex justify-center items-center text-white text-xl translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </div>
+                <div class="relative group w-full h-20 rounded-md overflow-hidden">
+                    <img src="https://www.siemreap.net/wp-content/uploads/2019/02/Equinox-at-Angkor-Wat.jpg" alt="Angkor Wat Equinox" class="w-full h-full object-cover" />
+                    <div class="absolute inset-0 bg-[#3336369b] bg-opacity-50 flex justify-center items-center text-white text-xl translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </div>
+                <div class="relative group w-full h-20 rounded-md overflow-hidden">
+                    <img src="https://images.squarespace-cdn.com/content/v1/531fa7cde4b04709d61d34e5/1472994148467-5PYFT285KKVJVAJY0MYS/image-asset.jpeg" alt="Khmer Culture" class="w-full h-full object-cover" />
+                    <div class="absolute inset-0 bg-[#3336369b] bg-opacity-50 flex justify-center items-center text-white text-xl translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </div>
+                <div class="relative group w-full h-20 rounded-md overflow-hidden">
+                    <img src="https://product.hstatic.net/200000644819/product/1896736516741f6c85bb-2_41fe6973697846ef97e15059e413b9cd_master.jpg" alt="Angkor Sunrise" class="w-full h-full object-cover" />
+                    <div class="absolute inset-0 bg-[#3336369b] bg-opacity-50 flex justify-center items-center text-white text-xl translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </div>
+                <div class="relative group w-full h-20 rounded-md overflow-hidden">
+                    <img src="https://th-thumbnailer.cdn-si-edu.com/TMVzhHVP-GUTRXARVeIMLwVxIJ8=/fit-in/1200x0/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer/a1/88/a188a6f4-143d-4df2-b955-f60e7872b307/gg7p00.jpg" alt="Temple Carvings" class="w-full h-full object-cover" />
+                    <div class="absolute inset-0 bg-[#3336369b] bg-opacity-50 flex justify-center items-center text-white text-xl translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Bottom Bar -->
-    <div class="border-t border-gray-700 mt-6 py-4 flex flex-col md:flex-row justify-center items-center text-sm px-4">
-      <p>Copyright 2025 Tourism. All Rights Reserved.</p>
-      <!-- go to top -->
-      <a href="" target="_top"
-        class="fixed bottom-6 right-6 bg-cyan-500 text-white rounded-full p-2 px-3.5 shadow-lg hover:bg-cyan-600">
-        <i class="fas fa-arrow-up"></i>
-      </a>
-  </footer>
+    <div class="border-t border-ltext-m dark:border-dtext-m mt-6 py-4 flex flex-col md:flex-row justify-center items-center text-sm px-4">
+        <p>Copyright 2025 Tourism. All Rights Reserved.</p>
+        <!-- Go to Top -->
+        <a href="#top" target="_top" class="fixed bottom-6 right-6 bg-lsecondary dark:bg-dsecondary text-white rounded-full p-2 px-3.5 shadow-lg hover:bg-laccent dark:hover:bg-daccent">
+            <i class="fas fa-arrow-up"></i>
+        </a>
+    </div>
+</footer>
+<script>
 
-  <script>
-    // Mobile Menu Toggle
-    const menuToggle = document.getElementById('menu-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
+  // Mobile Menu Toggle
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
 
-    menuToggle.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
+  menuToggle.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
 
-    // Dark Mode Toggle
-    const button = document.getElementById("theme-toggle");
-    const icon = document.getElementById("theme-icon");
-    const text = document.getElementById("theme-text");
+  // Dark Mode Toggle
+  const button = document.getElementById("theme-toggle");
+  const icon = document.getElementById("theme-icon");
+  const text = document.getElementById("theme-text");
 
-    const initTheme = () => {
-      if (
-        localStorage.theme === "dark" ||
-        (!localStorage.theme &&
-          window.matchMedia("(prefers-color-scheme: dark)").matches)
-      ) {
-        document.documentElement.classList.add("dark");
-        updateButton("dark");
-      } else {
-        document.documentElement.classList.remove("dark");
-        updateButton("light");
-      }
-    };
+  const initTheme = () => {
+    if (
+      localStorage.theme === "dark" ||
+      (!localStorage.theme &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches)
+    ) {
+      document.documentElement.classList.add("dark");
+      updateButton("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+      updateButton("light");
+    }
+  };
 
-    const updateButton = (theme) => {
-      if (theme === "dark") {
-        icon.innerHTML =
-          '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>';
-        text.textContent = "Dark Mode";
-      } else {
-        icon.innerHTML = `
-          <circle cx="12" cy="12" r="4"/>
-          <path d="M12 2v2"/>
-          <path d="M12 20v2"/>
-          <path d="m4.93 4.93 1.41 1.41"/>
-          <path d="m17.66 17.66 1.41 1.41"/>
-          <path d="M2 12h2"/>
-          <path d="M20 12h2"/>
-          <path d="m6.34 17.66-1.41 1.41"/>
-          <path d="m19.07 4.93-1.41 1.41"/>
-        `;
-        text.textContent = "Light Mode";
-      }
-    };
+  const updateButton = (theme) => {
+    if (theme === "dark") {
+      icon.innerHTML =
+        '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>';
+      text.textContent = "Dark Mode";
+    } else {
+      icon.innerHTML = `
+        <circle cx="12" cy="12" r="4"/>
+        <path d="M12 2v2"/>
+        <path d="M12 20v2"/>
+        <path d="m4.93 4.93 1.41 1.41"/>
+        <path d="m17.66 17.66 1.41 1.41"/>
+        <path d="M2 12h2"/>
+        <path d="M20 12h2"/>
+        <path d="m6.34 17.66-1.41 1.41"/>
+        <path d="m19.07 4.93-1.41 1.41"/>
+      `;
+      text.textContent = "Light Mode";
+    }
+  };
 
-    button.addEventListener("click", () => {
-      const isDark = document.documentElement.classList.toggle("dark");
-      localStorage.theme = isDark ? "dark" : "light";
-      updateButton(isDark ? "dark" : "light");
-    });
+  button.addEventListener("click", () => {
+    const isDark = document.documentElement.classList.toggle("dark");
+    localStorage.theme = isDark ? "dark" : "light";
+    updateButton(isDark ? "dark" : "light");
+  });
 
-    initTheme();
-  </script>
+  initTheme();
+</script>
+  <script src="src/script/script.js"></script>
 </body>
 
 </html>

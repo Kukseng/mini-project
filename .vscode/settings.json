@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "workbench.colorCustomizations": {
     "sideBar.background": "#1f2329",
     "activityBar.background": "#2A2E37",
@@ -15,4 +16,7 @@
   },
 
   "liveServer.settings.port": 5501
+=======
+  "liveServer.settings.port": 5503
+>>>>>>> c9808bb9021b338e878d3b703d86c093a9c4fc8a
 }
